@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # KhalifaDashboard
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
@@ -57,3 +58,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Al-Khalifa-Dashboard
+>>>>>>> 8b453d8fceb6fed61b9475b3fc5b8823ace4760c
