@@ -1,0 +1,21 @@
+.kpi-card {
+border: none;
+border-radius: 14px;
+box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+
+.kpi-icon {
+font-size: 2rem;
+color: #2563eb;
+}
+
+
+.card {
+border-radius: 14px;
+}
+
+
+.card-header {
+background: transparent;
+}
