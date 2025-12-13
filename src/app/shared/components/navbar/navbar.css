@@ -1,3 +1,6 @@
+.nav {
+    background-color: #f6f6fb;
+}
 .logo {
     display: flex;
     justify-content: center;
@@ -11,8 +14,11 @@
 }
 .search {
     padding: 6px;
-    background-color: #f6f6fb;
     border-radius: 6px;
     outline: none;
     border: none;
+}
+.profileImg {
+    width: 40px;
+    border-radius: 50px;
 }

@@ -1,1 +1,69 @@
-<p>login works!</p>
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+  <div class="card shadow-lg border-0" style="max-width: 420px; width: 100%;">
+    <div class="card-body p-4">
+
+      <!-- Logo / Title -->
+      <div class="text-center mb-4">
+        <i class="bi bi-shield-lock fs-1 text-primary"></i>
+        <h4 class="fw-bold mt-2">Admin Login</h4>
+        <p class="text-muted small">Sign in to your dashboard</p>
+      </div>
+
+      <!-- Login Form -->
+      <form>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email address</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-envelope"></i>
+            </span>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="admin@example.com"
+            />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-lock"></i>
+            </span>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="••••••••"
+            />
+          </div>
+        </div>
+
+        <!-- Remember & Forgot -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember" />
+            <label class="form-check-label small" for="remember">
+              Remember me
+            </label>
+          </div>
+
+          <a routerLink="/auth/forgot-password" class="small text-decoration-none">
+            Forgot password?
+          </a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100">
+          <i class="bi bi-box-arrow-in-right me-1"></i>
+          Login
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
