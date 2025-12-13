@@ -1,1 +1,48 @@
-<p>store works!</p>
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Store Settings</li>
+        </ol>
+    </nav>
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-semibold mb-0">Store Settings</h4>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="storeName" class="form-label">Store Name</label>
+                    <input type="text" class="form-control" id="storeName" placeholder="Enter store name" />
+                </div>
+                <div class="mb-3">
+                    <label for="storeEmail" class="form-label">Store Email</label>
+                    <input type="email" class="form-control" id="storeEmail" placeholder="store@example.com" />
+                </div>
+                <div class="mb-3">
+                    <label for="storePhone" class="form-label">Store Phone</label>
+                    <input type="text" class="form-control" id="storePhone" placeholder="Enter phone number" />
+                </div>
+                <div class="mb-3">
+                    <label for="storeAddress" class="form-label">Store Address</label>
+                    <textarea class="form-control" id="storeAddress" rows="3" placeholder="Enter store address"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="currency" class="form-label">Currency</label>
+                    <select class="form-select" id="currency">
+                        <option selected>USD</option>
+                        <option>EUR</option>
+                        <option>EGP</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-save me-2"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

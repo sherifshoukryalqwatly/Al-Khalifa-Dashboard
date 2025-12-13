@@ -1,1 +1,64 @@
-<p>email works!</p>
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Email Settings</li>
+        </ol>
+    </nav>
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-semibold mb-0">Email Settings</h4>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="mailDriver" class="form-label">Mail Driver</label>
+                    <select class="form-select" id="mailDriver">
+                        <option selected>SMTP</option>
+                        <option>SendGrid</option>
+                        <option>Mailgun</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="mailHost" class="form-label">Mail Host</label>
+                    <input type="text" class="form-control" id="mailHost" placeholder="smtp.mailserver.com" />
+                </div>
+                <div class="mb-3">
+                    <label for="mailPort" class="form-label">Mail Port</label>
+                    <input type="number" class="form-control" id="mailPort" placeholder="587" />
+                </div>
+                <div class="mb-3">
+                    <label for="mailUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="mailUsername" placeholder="user@mail.com" />
+                </div>
+                <div class="mb-3">
+                    <label for="mailPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="mailPassword" placeholder="********" />
+                </div>
+                <div class="mb-3">
+                    <label for="mailEncryption" class="form-label">Encryption</label>
+                    <select class="form-select" id="mailEncryption">
+                        <option selected>TLS</option>
+                        <option>SSL</option>
+                        <option>None</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="mailFromAddress" class="form-label">From Address</label>
+                    <input type="email" class="form-control" id="mailFromAddress" placeholder="noreply@example.com" />
+                </div>
+                <div class="mb-3">
+                    <label for="mailFromName" class="form-label">From Name</label>
+                    <input type="text" class="form-control" id="mailFromName" placeholder="Site Name" />
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-save me-2"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

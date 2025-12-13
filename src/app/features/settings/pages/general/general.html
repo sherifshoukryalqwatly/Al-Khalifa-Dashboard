@@ -1,1 +1,36 @@
-<p>general works!</p>
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100 border-0 hover-scale">
+      <div class="card-body text-center">
+        <i class="bi bi-shop fs-1 text-primary mb-3"></i>
+        <h5 class="card-title fw-bold">Store Settings</h5>
+        <p class="card-text text-muted">Manage store name, address, currency, and contact info.</p>
+        <a routerLink="/settings/store" class="btn btn-outline-primary btn-sm">Go to Store</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100 border-0 hover-scale">
+      <div class="card-body text-center">
+        <i class="bi bi-credit-card fs-1 text-success mb-3"></i>
+        <h5 class="card-title fw-bold">Payment Settings</h5>
+        <p class="card-text text-muted">Manage payment gateways and API keys.</p>
+        <a routerLink="/settings/payment" class="btn btn-outline-success btn-sm">Go to Payment</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100 border-0 hover-scale">
+      <div class="card-body text-center">
+        <i class="bi bi-envelope fs-1 text-warning mb-3"></i>
+        <h5 class="card-title fw-bold">Email Settings</h5>
+        <p class="card-text text-muted">Configure SMTP, SendGrid, Mailgun settings.</p>
+        <a routerLink="/settings/email" class="btn btn-outline-warning btn-sm">Go to Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more cards for Shipping, Notifications, etc. -->
+</div>

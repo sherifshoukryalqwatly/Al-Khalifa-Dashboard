@@ -1,1 +1,48 @@
-<p>payment works!</p>
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Payment Settings</li>
+        </ol>
+    </nav>
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-semibold mb-0">Payment Settings</h4>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="defaultGateway" class="form-label">Default Payment Gateway</label>
+                    <select class="form-select" id="defaultGateway">
+                        <option selected>Stripe</option>
+                        <option>PayPal</option>
+                        <option>Paymob</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="stripeApiKey" class="form-label">Stripe API Key</label>
+                    <input type="text" class="form-control" id="stripeApiKey" placeholder="Enter Stripe API Key" />
+                </div>
+                <div class="mb-3">
+                    <label for="paypalClientId" class="form-label">PayPal Client ID</label>
+                    <input type="text" class="form-control" id="paypalClientId" placeholder="Enter PayPal Client ID" />
+                </div>
+                <div class="mb-3">
+                    <label for="paypalSecret" class="form-label">PayPal Secret</label>
+                    <input type="text" class="form-control" id="paypalSecret" placeholder="Enter PayPal Secret" />
+                </div>
+                <div class="mb-3">
+                    <label for="paymobApiKey" class="form-label">Paymob API Key</label>
+                    <input type="text" class="form-control" id="paymobApiKey" placeholder="Enter Paymob API Key" />
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-save me-2"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
