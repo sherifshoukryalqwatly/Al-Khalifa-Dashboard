@@ -1,1 +1,101 @@
-<p>list works!</p>
+<div class="container-fluid">
+
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-semibold mb-0">Orders</h4>
+
+        <button class="btn btn-primary">
+            <i class="bi bi-plus-circle me-2"></i>
+            Add Order
+        </button>
+    </div>
+
+    <!-- Filters -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search order..." />
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>All Status</option>
+                        <option>Pending</option>
+                        <option>Completed</option>
+                        <option>Cancelled</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>All Payment</option>
+                        <option>Paid</option>
+                        <option>Unpaid</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-secondary w-100">
+                        <i class="bi bi-funnel me-1"></i>Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Table -->
+    <div class="card">
+        <div class="card-body p-0">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>#1024</td>
+                        <td>Ahmed Ali</td>
+                        <td><span class="badge bg-success">Completed</span></td>
+                        <td>$120</td>
+                        <td class="text-end">
+                        <button class="btn btn-sm btn-outline-secondary me-1">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary me-1">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>#1025</td>
+                        <td>Sara Mohamed</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                        <td>$75</td>
+                        <td class="text-end">
+                            <button class="btn btn-sm btn-outline-secondary me-1">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary me-1">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
