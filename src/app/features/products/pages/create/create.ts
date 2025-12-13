@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './create.css',
 })
 export class Create {
-
+  
 }

@@ -98,7 +98,7 @@ export const routes: Routes = [
       { path: 'settings/payment', component: Payment },
       { path: 'settings/store', component: Store },
 
-      // Settings
+      // Analytics
       { path: 'analytics', component: Analytics },
       { path: 'analytics/users', component: Customers },
       { path: 'analytics/products', component: Products },

@@ -1,1 +1,146 @@
-<p>edit works!</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h4 class="fw-bold mb-1">Edit Product</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a routerLink="/products">Products</a>
+        </li>
+        <li class="breadcrumb-item active">Edit</li>
+      </ol>
+    </nav>
+  </div>
+
+  <span class="badge bg-warning-subtle text-warning">
+    Draft
+  </span>
+</div>
+<form class="row g-4" (ngSubmit)="updateProduct()">
+
+  <!-- LEFT -->
+  <div class="col-lg-8">
+
+    <!-- Product Info -->
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-header bg-white fw-semibold">
+        Product Information
+      </div>
+
+      <div class="card-body">
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Product Name</label>
+          <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Description</label>
+          <textarea class="form-control" rows="4" [(ngModel)]="product.description" name="description"></textarea>
+        </div>
+
+        <!-- Category & Brand -->
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Category</label>
+            <select class="form-select" [(ngModel)]="product.category" name="category">
+              <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Brand</label>
+            <input type="text" class="form-control" [(ngModel)]="product.brand" name="brand">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white fw-semibold">
+        Pricing
+      </div>
+
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Price</label>
+            <input type="number" class="form-control" [(ngModel)]="product.price" name="price">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Discount (%)</label>
+            <input type="number" class="form-control" [(ngModel)]="product.discount" name="discount">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Final Price</label>
+            <input type="number" class="form-control" [value]="product.price - (product.price * (product.discount/100))" disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="col-lg-4">
+
+    <!-- Images -->
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-header bg-white fw-semibold">
+        Product Images
+      </div>
+
+      <div class="card-body">
+
+        <div class="row g-2 mb-3">
+          <div class="col-4" *ngFor="let img of product.images; let i = index">
+            <div class="position-relative">
+              <img [src]="img" class="img-fluid rounded border">
+              <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0" (click)="removeImage(i)">
+                <i class="bi bi-x"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- If no images yet -->
+          <div *ngIf="product.images.length === 0" class="text-center text-muted">
+            No images uploaded
+          </div>
+        </div>
+
+        <input type="file" class="form-control" multiple (change)="onImagesSelected($event)">
+      </div>
+    </div>
+
+    <!-- Publish -->
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white fw-semibold">
+        Publish
+      </div>
+
+      <div class="card-body">
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="product.active" name="active">
+          <label class="form-check-label">Active</label>
+        </div>
+
+        <button class="btn btn-primary w-100 mb-2" [disabled]="!product.name || !product.category">
+          <i class="bi bi-save me-1"></i> Update Product
+        </button>
+
+        <a routerLink="/products" class="btn btn-outline-secondary w-100">
+          Cancel
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</form>
+

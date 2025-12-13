@@ -1,1 +1,120 @@
-<p>create works!</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h4 class="fw-bold mb-1">Add Product</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a routerLink="/products">Products</a>
+        </li>
+        <li class="breadcrumb-item active">Add</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<form class="row g-4">
+
+  <!-- LEFT -->
+  <div class="col-lg-8">
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-header bg-white fw-semibold">
+        Product Information
+      </div>
+
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Product Name</label>
+          <input type="text" class="form-control" placeholder="iPhone 15 Pro">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Description</label>
+          <textarea rows="4" class="form-control" placeholder="Product description..."></textarea>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Category</label>
+            <select class="form-select">
+              <option>Select category</option>
+              <option>Electronics</option>
+              <option>Clothing</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Brand</label>
+            <input type="text" class="form-control" placeholder="Apple">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white fw-semibold">
+        Pricing
+      </div>
+
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Price</label>
+            <input type="number" class="form-control" placeholder="1000">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Discount</label>
+            <input type="number" class="form-control" placeholder="10%">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Final Price</label>
+            <input type="number" class="form-control" disabled placeholder="900">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-header bg-white fw-semibold">
+        Product Image
+      </div>
+
+      <div class="card-body text-center">
+        <div class="border rounded p-4 mb-3">
+          <i class="bi bi-image fs-1 text-muted"></i>
+          <p class="text-muted mb-0">Upload product image</p>
+        </div>
+        <input type="file" class="form-control">
+      </div>
+    </div>
+
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white fw-semibold">
+        Publish
+      </div>
+
+      <div class="card-body">
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" checked>
+          <label class="form-check-label">Active</label>
+        </div>
+
+        <button class="btn btn-primary w-100 mb-2">
+          <i class="bi bi-check-circle me-1"></i> Save Product
+        </button>
+
+        <a routerLink="/products" class="btn btn-outline-secondary w-100">
+          Cancel
+        </a>
+      </div>
+    </div>
+  </div>
+
+</form>
