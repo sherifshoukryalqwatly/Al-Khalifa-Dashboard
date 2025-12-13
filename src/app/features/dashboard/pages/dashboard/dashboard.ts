@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AnalyticsRoutingModule } from "../../../analytics/analytics-routing-module";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [AnalyticsRoutingModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

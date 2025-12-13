@@ -1,0 +1,11 @@
+.card {
+  border-radius: 14px;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s ease;
+}
+.catego a {
+    cursor: pointer;
+}

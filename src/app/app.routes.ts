@@ -33,6 +33,10 @@ import { General } from './features/settings/pages/general/general';
 import { Email } from './features/settings/pages/email/email';
 import { Payment } from './features/settings/pages/payment/payment';
 import { Store } from './features/settings/pages/store/store';
+import { Analytics } from './features/analytics/pages/analytics/analytics';
+import { Customers } from './features/analytics/pages/customers/customers';
+import { Products } from './features/analytics/pages/products/products';
+import { Sales } from './features/analytics/pages/sales/sales';
 
 export const routes: Routes = [
   // Redirect root
@@ -93,6 +97,12 @@ export const routes: Routes = [
       { path: 'settings/email', component: Email },
       { path: 'settings/payment', component: Payment },
       { path: 'settings/store', component: Store },
+
+      // Settings
+      { path: 'analytics', component: Analytics },
+      { path: 'analytics/users', component: Customers },
+      { path: 'analytics/products', component: Products },
+      { path: 'analytics/sales', component: Sales },
     ]
   },
 
