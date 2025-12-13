@@ -1,8 +1,11 @@
 <app-navbar></app-navbar>
-<div class="layout-container">
-    <app-sidebar></app-sidebar>
-    <main class="main-content">
+<div class="row main">
+    <div class="col-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <main class="col-10 p-4">
         <router-outlet></router-outlet>
+        
     </main>
 </div>
 <app-footer></app-footer>

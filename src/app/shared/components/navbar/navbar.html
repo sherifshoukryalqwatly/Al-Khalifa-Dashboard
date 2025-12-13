@@ -1,1 +1,36 @@
-<p>navbar works!</p>
+<div class="nav">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 logo p-1">
+                <img src="https://png.pngtree.com/element_pic/17/02/19/4e10739872e26990dfa2dc99a7f106d3.jpg" alt="">
+                <span class="fs-5 fw-bold">Koora Admin</span>
+            </div>
+            <div class="col-7 d-flex align-items-center py-1 px-3">
+                <input type="search" class="w-75 search" placeholder="Search">
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <div class="profile d-flex justify-content-center align-items-center">
+                    <img class="profileImg" src="https://static.vecteezy.com/system/resources/previews/046/409/821/non_2x/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg" alt="">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sherif Shukri
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-white d-block text-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-bell noti"></i></button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Notifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    ...
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

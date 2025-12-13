@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })
-export class EditCoupne {
+export class EditInventory {
 
 }

@@ -1,0 +1,42 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img {
+    display: block;
+    width: 50px;
+    padding: 10px;
+    border-radius: 50%;
+}
+.search {
+    padding: 6px;
+    background-color: #f6f6fb;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+}
+.profileImg {
+    width: 40px;
+    border-radius: 50px;
+}
+.profile{
+    cursor: pointer;
+}
+.dropdown button {
+    border: none !important;
+}
+.noti {
+    display: block;
+    position: relative;
+}
+.noti::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    right: -3px;
+    top: -1px;
+    border-radius: 50%;
+}
