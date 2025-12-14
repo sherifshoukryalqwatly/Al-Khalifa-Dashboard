@@ -39,6 +39,8 @@ import { Products } from './features/analytics/pages/products/products';
 import { Sales } from './features/analytics/pages/sales/sales';
 import { RefundDetails } from './features/payments/pages/refund-details/refund-details';
 import { AddZones } from './features/shipping/pages/add-zones/add-zones';
+import { AddUser } from './features/customers/pages/add/add';
+import { EditUser } from './features/customers/pages/edit/edit';
 
 export const routes: Routes = [
   // Redirect root
@@ -70,6 +72,8 @@ export const routes: Routes = [
 
       // Customers
       { path: 'customers', component: CustomersList },
+      { path: 'customers/add', component: AddUser },
+      { path: 'customers/edit/:id', component: EditUser },
       { path: 'customers/details/:id', component: CustomerDetails },
 
       // Coupns
