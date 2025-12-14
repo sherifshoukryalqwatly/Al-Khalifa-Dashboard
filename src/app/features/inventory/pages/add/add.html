@@ -1,1 +1,108 @@
-<p>add works!</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h4 class="fw-bold mb-1">Add Inventory</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+        <li class="breadcrumb-item"><a routerLink="/inventory">Inventory</a></li>
+        <li class="breadcrumb-item active">Add</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<form class="row justify-content-center" (ngSubmit)="createInventory()">
+  <div class="col-lg-6">
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+
+        <!-- Product Name -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="inventory.productName"
+            name="productName"
+            required
+          />
+        </div>
+
+        <!-- SKU -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">SKU</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="inventory.sku"
+            name="sku"
+          />
+        </div>
+
+        <!-- Quantity -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Quantity</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="inventory.quantity"
+            name="quantity"
+            min="0"
+          />
+        </div>
+
+        <!-- Low Stock Alert -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Low Stock Alert</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="inventory.lowStock"
+            name="lowStock"
+            min="1"
+          />
+        </div>
+
+        <!-- Location -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Warehouse Location</label>
+          <select
+            class="form-select"
+            [(ngModel)]="inventory.location"
+            name="location"
+          >
+            <option>Main Warehouse</option>
+            <option>Store Front</option>
+            <option>Secondary Warehouse</option>
+          </select>
+        </div>
+
+        <!-- Status -->
+        <div class="form-check mb-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="inventory.active"
+            name="active"
+          />
+          <label class="form-check-label">In Stock</label>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary w-100 mb-2"
+          [disabled]="!inventory.productName"
+        >
+          <i class="bi bi-check-circle me-1"></i> Save Inventory
+        </button>
+
+        <a routerLink="/inventory" class="btn btn-outline-secondary w-100">
+          Cancel
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</form>

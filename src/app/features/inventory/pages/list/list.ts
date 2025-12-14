@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { AnalyticsRoutingModule } from "../../../analytics/analytics-routing-module";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list',
-  imports: [],
+  imports: [AnalyticsRoutingModule,RouterModule],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
