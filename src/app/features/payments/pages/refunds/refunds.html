@@ -1,1 +1,64 @@
-<p>refunds works!</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h4 class="fw-bold mb-1">Refund Requests</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+        <li class="breadcrumb-item active">Refunds</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th>Refund ID</th>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let refund of refunds">
+            <td>{{ refund.id }}</td>
+            <td>{{ refund.orderId }}</td>
+            <td>{{ refund.customer }}</td>
+            <td>{{ refund.amount }} EGP</td>
+            <td>{{ refund.reason }}</td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'bg-warning text-dark': refund.status === 'Pending',
+                  'bg-success': refund.status === 'Approved',
+                  'bg-danger': refund.status === 'Rejected'
+                }"
+              >
+                {{ refund.status }}
+              </span>
+            </td>
+            <td>{{ refund.date }}</td>
+            <td class="text-end">
+              <a
+                routerLink="/payments/refunds/details/123"
+                class="btn btn-sm btn-outline-primary"
+              >
+                View
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

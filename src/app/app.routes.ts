@@ -37,6 +37,7 @@ import { Analytics } from './features/analytics/pages/analytics/analytics';
 import { Customers } from './features/analytics/pages/customers/customers';
 import { Products } from './features/analytics/pages/products/products';
 import { Sales } from './features/analytics/pages/sales/sales';
+import { RefundDetails } from './features/payments/pages/refund-details/refund-details';
 
 export const routes: Routes = [
   // Redirect root
@@ -80,9 +81,10 @@ export const routes: Routes = [
       { path: 'inventory/add', component: AddInventory },
       { path: 'inventory/edit/:id', component: EditInventory },
 
-      // Payment
+      // Payments
       { path: 'payments', component: Transactions },
       { path: 'payments/refunds', component: Refunds },
+      { path: 'payments/refunds/details/:id', component: RefundDetails },
 
       // Shipping
       { path: 'shipping', component: Methods },
