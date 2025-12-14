@@ -1,1 +1,80 @@
-<p>edit works!</p>
+<h4 class="fw-bold mb-4">Edit Coupon</h4>
+
+<form class="row justify-content-center" (ngSubmit)="updateCoupon()">
+  <div class="col-lg-6">
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+
+        <!-- Code -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Coupon Code</label>
+          <input
+            type="text"
+            class="form-control text-uppercase"
+            [(ngModel)]="coupon.code"
+            name="code"
+            disabled
+          />
+        </div>
+
+        <!-- Discount -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Discount</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="coupon.discount"
+            name="discount"
+            min="1"
+          />
+        </div>
+
+        <!-- Type -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Discount Type</label>
+          <select
+            class="form-select"
+            [(ngModel)]="coupon.type"
+            name="type"
+          >
+            <option value="percentage">Percentage (%)</option>
+            <option value="fixed">Fixed Amount</option>
+          </select>
+        </div>
+
+        <!-- Expiry -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Expiry Date</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="coupon.expiresAt"
+            name="expiresAt"
+          />
+        </div>
+
+        <!-- Status -->
+        <div class="form-check mb-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="coupon.active"
+            name="active"
+          />
+          <label class="form-check-label">Active</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-2">
+          <i class="bi bi-save me-1"></i> Update Coupon
+        </button>
+
+        <a routerLink="/coupons" class="btn btn-outline-secondary w-100">
+          Cancel
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</form>

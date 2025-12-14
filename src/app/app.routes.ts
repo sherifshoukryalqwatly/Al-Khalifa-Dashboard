@@ -70,10 +70,10 @@ export const routes: Routes = [
       { path: 'customers', component: CustomersList },
       { path: 'customers/details/:id', component: CustomerDetails },
 
-      // Coupnes
-      { path: 'coupones', component: CoupnesList },
-      { path: 'coupones/add', component: AddCoupne },
-      { path: 'coupones/edit/:id', component: EditCoupne },
+      // Coupns
+      { path: 'coupons', component: CoupnesList },
+      { path: 'coupons/add', component: AddCoupne },
+      { path: 'coupons/edit/:id', component: EditCoupne },
 
       // Inventory
       { path: 'inventory', component: InventoryList },
