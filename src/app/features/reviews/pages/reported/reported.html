@@ -1,1 +1,68 @@
-<p>reported works!</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h4 class="fw-bold mb-1">Reported Reviews</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+        <li class="breadcrumb-item active">Reported Reviews</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th>Report ID</th>
+            <th>Product</th>
+            <th>Reviewer</th>
+            <th>Rating</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let report of reports">
+            <td>{{ report.id }}</td>
+            <td>{{ report.product }}</td>
+            <td>{{ report.reviewer }}</td>
+            <td>
+              <i
+                class="bi bi-star-fill text-warning me-1"
+                *ngFor="let star of [].constructor(report.rating)"
+              ></i>
+            </td>
+            <td>{{ report.reason }}</td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'bg-warning text-dark': report.status === 'Pending',
+                  'bg-success': report.status === 'Resolved'
+                }"
+              >
+                {{ report.status }}
+              </span>
+            </td>
+            <td>{{ report.date }}</td>
+            <td class="text-end">
+              <a
+                routerLink="/reviews/reported/details"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Review
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
