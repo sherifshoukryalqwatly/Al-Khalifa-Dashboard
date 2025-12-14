@@ -1,0 +1,68 @@
+<h4 class="fw-bold mb-4">Add Shipping Zone</h4>
+
+<form class="row justify-content-center" (ngSubmit)="createZone()">
+  <div class="col-lg-6">
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Zone Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="zone.name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Shipping Fee (EGP)</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="zone.fee"
+            name="fee"
+            min="0"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Delivery Time</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="zone.delivery"
+            name="delivery"
+            placeholder="e.g. 2-3 Days"
+          />
+        </div>
+
+        <div class="form-check mb-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="zone.active"
+            name="active"
+          />
+          <label class="form-check-label">Active</label>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary w-100 mb-2"
+          [disabled]="!zone.name"
+        >
+          <i class="bi bi-check-circle me-1"></i> Save Zone
+        </button>
+
+        <a routerLink="/shipping-zones" class="btn btn-outline-secondary w-100">
+          Cancel
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</form>

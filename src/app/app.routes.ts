@@ -38,6 +38,7 @@ import { Customers } from './features/analytics/pages/customers/customers';
 import { Products } from './features/analytics/pages/products/products';
 import { Sales } from './features/analytics/pages/sales/sales';
 import { RefundDetails } from './features/payments/pages/refund-details/refund-details';
+import { AddZones } from './features/shipping/pages/add-zones/add-zones';
 
 export const routes: Routes = [
   // Redirect root
@@ -89,6 +90,7 @@ export const routes: Routes = [
       // Shipping
       { path: 'shipping', component: Methods },
       { path: 'shipping/zones', component: Zones },
+      { path: 'shipping/zones/add', component: AddZones },
   
       // Review
       { path: 'reviews', component: ReviewList },
