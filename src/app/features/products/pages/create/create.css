@@ -6,3 +6,9 @@
 .form-select {
   border-radius: 10px;
 }
+
+nav ol li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}

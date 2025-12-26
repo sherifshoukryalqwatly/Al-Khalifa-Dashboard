@@ -1,138 +1,32 @@
+<div class="sidebar d-flex flex-column p-2 pt-3" [class.collapsed]="isCollapsed">
+  <a class="sidebar-brand mb-4 text-center" (click)="toggleSidebar()" role="button">
+    <i class="bi bi-grid-fill me-2"></i>
+    @if (!isCollapsed) {
+      <span>Admin</span>
+    }
+  </a>
 
-<div class="sidebar d-flex flex-column p-2 pt-3 ">
-    <a class="sidebar-brand mb-4 text-center">
-        <i class="bi bi-grid-fill me-2"></i>
-        <span>Admin</span>
-    </a>
-    <ul class="nav nav-pills flex-column gap-1">
+  <ul class="nav nav-pills flex-column gap-1">
 
-        <li class="nav-item">
-            <a
-                class="nav-link"
-                routerLink="dashboard"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }"
-            >
-                <i class="bi bi-speedometer2"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a
-                class="nav-link"
-                routerLink="/analytics"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-bar-chart"></i>
-                <span>Analytics</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a
-             class="nav-link"
-             routerLink="/products"
-             routerLinkActive="active"
-            >
-                <i class="bi bi-box"></i>
-                <span>Products</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/customers"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-people"></i>
-                <span>Users</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/categories"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-grid"></i>
-                <span>Categories</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/orders"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-cart"></i>
-                <span>Orders</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/coupons"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-tag"></i>
-                <span>Coupone</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/inventory"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-box-seam"></i>
-                <span>Inventory</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/payments"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-credit-card"></i>
-                <span>Payments</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/reviews"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-star"></i>
-                <span>Reviews</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/shipping"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-truck"></i>
-                <span>Shipping</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a 
-                class="nav-link"
-                routerLink="/settings"
-                routerLinkActive="active"
-            >
-                <i class="bi bi-gear"></i>
-                <span>Settings</span>
-            </a>
-        </li>
+    @for (item of menu; track item.link) {
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="item.link" routerLinkActive="active">
+          <i class="bi" [ngClass]="item.icon"></i>
+          @if (!isCollapsed) {
+            <span>{{ item.label }}</span>
+          }
+        </a>
+      </li>
+    }
 
-        <li class="nav-item mt-auto">
-            <a class="nav-link text-danger">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Logout</span>
-            </a>
-        </li>
-    </ul>
+    <li class="nav-item mt-auto">
+      <a class="nav-link text-danger">
+        <i class="bi bi-box-arrow-right"></i>
+        @if (!isCollapsed) {
+          <span>Logout</span>
+        }
+      </a>
+    </li>
+
+  </ul>
 </div>

@@ -1,11 +1,21 @@
 <app-navbar></app-navbar>
-<div class="row main">
-    <div class="col-2">
-        <app-sidebar></app-sidebar>
+
+<div class="container-fluid px-0">
+  <div class="row g-0 main">
+
+    <div [class.col-2]="!isSidebarCollapsed" [class.col-1]="isSidebarCollapsed">
+      <app-sidebar (collapsedChange)="onSidebarToggle($event)"></app-sidebar>
     </div>
-    <main class="col-10 p-4">
-        <router-outlet></router-outlet>
-        
+
+    <main 
+      class="py-4 pe-5"
+      [class.col-10]="!isSidebarCollapsed"
+      [class.col-11]="isSidebarCollapsed"
+    >
+      <router-outlet></router-outlet>
     </main>
+
+  </div>
 </div>
+
 <app-footer></app-footer>
