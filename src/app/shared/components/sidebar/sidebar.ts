@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { AnalyticsRoutingModule } from "../../../features/analytics/analytics-routing-module";
 import { CommonModule } from '@angular/common';
 
@@ -10,13 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class Sidebar {
   isCollapsed = false;
+  isMobileOpen = false;
 
   @Output() collapsedChange = new EventEmitter<boolean>();
-
-  toggleSidebar() {
-    this.isCollapsed = !this.isCollapsed;
-    this.collapsedChange.emit(this.isCollapsed);
-  }
 
   menu = [
     { label: 'Dashboard', link: 'dashboard', icon: 'bi-speedometer2' },
@@ -32,4 +28,24 @@ export class Sidebar {
     { label: 'Shipping', link: '/shipping', icon: 'bi-truck' },
     { label: 'Settings', link: '/settings', icon: 'bi-gear' },
   ];
+
+  toggleSidebar() {
+    if (window.innerWidth < 768) {
+      this.isMobileOpen = !this.isMobileOpen;
+    } else {
+      this.isCollapsed = !this.isCollapsed;
+      this.collapsedChange.emit(this.isCollapsed);
+    }
+  }
+
+  closeMobile() {
+    this.isMobileOpen = false;
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth >= 768) {
+      this.isMobileOpen = false;
+    }
+  }
 }
