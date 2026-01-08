@@ -2,41 +2,50 @@
 <div class="sidebar-overlay" *ngIf="isMobileOpen" (click)="closeMobile()"></div>
 
 <div
-  class="sidebar d-flex flex-column p-2 pt-3"
+  class="sidebar d-flex flex-column p-2 pt-3 shadow-sm"
   [class.collapsed]="isCollapsed"
   [class.mobile-open]="isMobileOpen"
 >
-  <a class="sidebar-brand mb-4 text-center" (click)="toggleSidebar()" role="button">
+  <!-- Brand -->
+  <a class="sidebar-brand mb-4 text-center fw-semibold" (click)="toggleSidebar()" role="button">
     <i class="bi bi-grid-fill me-2"></i>
     @if (!isCollapsed) {
       <span>Admin</span>
     }
   </a>
 
-  <ul class="nav nav-pills flex-column gap-1">
+  <!-- Menu -->
+  <ul class="nav nav-pills flex-column gap-1 flex-grow-1">
 
     @for (item of menu; track item.link) {
-      <li class="nav-item">
-        <a class="nav-link"
+      <li class="nav-item position-relative">
+        <a class="nav-link d-flex align-items-center gap-2"
            [routerLink]="item.link"
            routerLinkActive="active"
-           (click)="closeMobile()">
-          <i class="bi" [ngClass]="item.icon"></i>
+           (click)="closeMobile()"
+           [attr.title]="isCollapsed ? item.label : null">
+
+          <i class="bi fs-5" [ngClass]="item.icon"></i>
+
           @if (!isCollapsed) {
-            <span>{{ item.label }}</span>
+            <span class="nav-text">{{ item.label }}</span>
           }
+
+          <!-- Active indicator -->
+          <span class="active-indicator"></span>
         </a>
       </li>
     }
 
-    <li class="nav-item mt-auto">
-      <a class="nav-link text-danger">
-        <i class="bi bi-box-arrow-right"></i>
-        @if (!isCollapsed) {
-          <span>Logout</span>
-        }
-      </a>
-    </li>
-
   </ul>
+
+  <!-- Logout -->
+  <div class="mt-auto">
+    <a class="nav-link text-danger d-flex align-items-center gap-2">
+      <i class="bi bi-box-arrow-right fs-5"></i>
+      @if (!isCollapsed) {
+        <span>Logout</span>
+      }
+    </a>
+  </div>
 </div>

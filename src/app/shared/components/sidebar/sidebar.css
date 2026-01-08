@@ -1,57 +1,79 @@
 .sidebar {
-    height: 100%;
-    background: #f6f6fb; /* dark modern */
-    color: #fff;
-    width: 220px;
-    transition: width 0.3s;
-    overflow: hidden;
+  height: 100%;
+  background: #f6f6fb;
+  color: #000;
+  width: 220px;
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-right: 1px solid #e5e7eb;
 }
 
+.sidebar:hover {
+  box-shadow: 4px 0 20px rgba(0,0,0,0.04);
+}
 
 .sidebar-brand {
-    font-size: 1.2rem;
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-    user-select: none;
+  font-size: 1.2rem;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
 }
-
 
 .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #000;
-    border-radius: 10px;
-    padding: 10px 14px;
-    transition: all 0.2s ease;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #000;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+  position: relative;
 }
-
 
 .nav-link i {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
+  min-width: 24px;
+  text-align: center;
 }
-
 
 .nav-link:hover {
-    background: #1e293b;
-    color: #fff;
+  background: #1e293b;
+  color: #fff;
+  transform: translateX(3px);
 }
-
 
 .nav-link.active {
-    background: #2563eb;
-    color: #fff;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
 }
 
+.nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 2px;
+  background: #1d4ed8;
+}
+
+/* Collapsed */
 .sidebar.collapsed {
   width: 70px;
 }
 
 .sidebar.collapsed span {
   display: none;
+}
+
+.sidebar.collapsed .nav-link {
+  justify-content: center;
+  padding: 10px;
 }
 
 /* Mobile behavior */

@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 })
 export class Navbar {
   @Output() toggleSidebar = new EventEmitter<void>();
-
+  
   // Add this method
   onToggleClick() {
     this.toggleSidebar.emit(); // emits event to parent
