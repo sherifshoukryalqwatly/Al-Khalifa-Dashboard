@@ -27,6 +27,7 @@ export class Sidebar {
     { label: 'Reviews', link: '/reviews', icon: 'bi-star' },
     { label: 'Shipping', link: '/shipping', icon: 'bi-truck' },
     { label: 'Settings', link: '/settings', icon: 'bi-gear' },
+    { label: 'Support', link: '/support', icon: 'bi-headset' },
   ];
 
   toggleSidebar() {

@@ -44,6 +44,10 @@ import { EditUser } from './features/customers/pages/edit/edit';
 import { OrderEdit } from './features/orders/pages/edit/edit';
 import { PaymentDetails } from './features/payments/pages/details/details';
 import { EditShipping } from './features/shipping/pages/edit/edit';
+import { SupportHome } from './features/support/pages/home/home';
+import { Profile } from './features/profilee/pages/profile/profile';
+import { EditProfile } from './features/profilee/pages/edit/edit';
+import { ChangePasswordProfile } from './features/profilee/pages/change-password/change-password';
 
 export const routes: Routes = [
   // Redirect root
@@ -56,6 +60,11 @@ export const routes: Routes = [
     children: [
       // Dashboard home
       { path: 'dashboard', component: Dashboard },
+
+      //Profile
+      {path: 'profile',component: Profile},
+      {path: 'profile/edit',component: EditProfile},
+      {path: 'profile/change-password',component: ChangePasswordProfile},
 
       // Products
       { path: 'products', component: List },
@@ -117,6 +126,9 @@ export const routes: Routes = [
       { path: 'analytics/users', component: Customers },
       { path: 'analytics/products', component: Products },
       { path: 'analytics/sales', component: Sales },
+
+      //support
+      {path: 'support',component: SupportHome}
     ]
   },
 
