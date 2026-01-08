@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-email',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './email.html',
   styleUrl: './email.css',
 })

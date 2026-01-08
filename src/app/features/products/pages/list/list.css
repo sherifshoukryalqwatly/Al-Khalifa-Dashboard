@@ -7,3 +7,8 @@
     height: 40px;
     object-fit: cover;
 }
+button a {
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+}

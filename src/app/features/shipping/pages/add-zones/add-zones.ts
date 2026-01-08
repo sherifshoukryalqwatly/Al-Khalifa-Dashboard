@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-add-zones',
-  imports: [FormsModule],
+  imports: [FormsModule,RouterModule],
   templateUrl: './add-zones.html',
   styleUrl: './add-zones.css',
 })

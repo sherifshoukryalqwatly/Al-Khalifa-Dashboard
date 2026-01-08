@@ -2,8 +2,8 @@
 
 
     <!-- Page Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="fw-semibold mb-0">Orders</h4>
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+        <h4 class="fw-semibold mb-0 p-2">Orders</h4>
 
         <a routerLink="/orders/pending" class="btn btn-warning">
             Pending Order
@@ -42,59 +42,57 @@
     </div>
 
     <!-- Orders Table -->
-    <div class="card">
-        <div class="card-body p-0">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
-                    <tr>
-                        <th>#</th>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Status</th>
-                        <th>Total</th>
-                        <th class="text-end">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>#1024</td>
-                        <td>Ahmed Ali</td>
-                        <td><span class="badge bg-success">Completed</span></td>
-                        <td>$120</td>
-                        <td class="text-end">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>#1024</td>
+                    <td>Ahmed Ali</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                    <td>$120</td>
+                    <td class="text-end">
+                    <a routerLink="/orders/details/22" class="btn btn-sm btn-outline-secondary me-1">
+                        <i class="bi bi-eye"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-primary me-1" routerLink="/orders/edit/22">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <button class="btn btn-sm btn-outline-danger">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>#1025</td>
+                    <td>Sara Mohamed</td>
+                    <td><span class="badge bg-warning">Pending</span></td>
+                    <td>$75</td>
+                    <td class="d-flex justify-content-end w-fit-content">
                         <a routerLink="/orders/details/22" class="btn btn-sm btn-outline-secondary me-1">
                             <i class="bi bi-eye"></i>
                         </a>
-                        <button class="btn btn-sm btn-outline-primary me-1">
+                        <a class="btn btn-sm btn-outline-primary me-1" routerLink="/orders/edit/22">
                             <i class="bi bi-pencil"></i>
-                        </button>
+                        </a>
                         <button class="btn btn-sm btn-outline-danger">
                             <i class="bi bi-trash"></i>
                         </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>#1025</td>
-                        <td>Sara Mohamed</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                        <td>$75</td>
-                        <td class="text-end">
-                            <button class="btn btn-sm btn-outline-secondary me-1">
-                                <i class="bi bi-eye"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-primary me-1">
-                                <i class="bi bi-pencil"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

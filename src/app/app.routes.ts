@@ -41,6 +41,9 @@ import { RefundDetails } from './features/payments/pages/refund-details/refund-d
 import { AddZones } from './features/shipping/pages/add-zones/add-zones';
 import { AddUser } from './features/customers/pages/add/add';
 import { EditUser } from './features/customers/pages/edit/edit';
+import { OrderEdit } from './features/orders/pages/edit/edit';
+import { PaymentDetails } from './features/payments/pages/details/details';
+import { EditShipping } from './features/shipping/pages/edit/edit';
 
 export const routes: Routes = [
   // Redirect root
@@ -69,6 +72,7 @@ export const routes: Routes = [
       { path: 'orders', component: ListOrders },
       { path: 'orders/pending', component: PendingOrders },
       { path: 'orders/details/:id', component: OrderDetails },
+      { path: 'orders/edit/:id', component: OrderEdit },
 
       // Customers
       { path: 'customers', component: CustomersList },
@@ -88,11 +92,13 @@ export const routes: Routes = [
 
       // Payments
       { path: 'payments', component: Transactions },
+      { path: 'payments/details/123', component: PaymentDetails },
       { path: 'payments/refunds', component: Refunds },
       { path: 'payments/refunds/details/:id', component: RefundDetails },
 
       // Shipping
       { path: 'shipping', component: Methods },
+      { path: 'shipping/edit/:id', component: EditShipping },
       { path: 'shipping/zones', component: Zones },
       { path: 'shipping/zones/add', component: AddZones },
   

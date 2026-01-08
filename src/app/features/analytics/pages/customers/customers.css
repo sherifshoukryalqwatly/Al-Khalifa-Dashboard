@@ -4,3 +4,8 @@
 .card-header {
   border-bottom: 1px solid #f1f1f1;
 }
+ol a {
+    cursor: pointer;
+    text-decoration: none;
+    color : #000
+}

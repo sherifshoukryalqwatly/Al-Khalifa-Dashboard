@@ -2,3 +2,8 @@ img {
   object-fit: cover;
   height: 80px;
 }
+ol a {
+  cursor: pointer;
+  text-decoration: none;
+  color : #000
+}

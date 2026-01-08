@@ -1,4 +1,28 @@
-<h4 class="fw-bold mb-4">Add Shipping Zone</h4>
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+  <div class="p-3">
+    <h4 class="fw-bold mb-4">Add Shipping Zone</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a routerLink="/shipping">Shipping</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a routerLink="/shipping/zones">Shipping Zones</a>
+        </li>
+        <li class="breadcrumb-item active">Add Shipping</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="p-3">
+    <a routerLink="/products/edit/1" class="btn btn-outline-primary me-2">
+      <i class="bi bi-pencil"></i> Edit
+    </a>
+    <button class="btn btn-outline-danger">
+      <i class="bi bi-trash"></i> Delete
+    </button>
+  </div>
+</div>
 
 <form class="row justify-content-center" (ngSubmit)="createZone()">
   <div class="col-lg-6">
