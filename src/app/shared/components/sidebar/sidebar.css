@@ -1,3 +1,6 @@
+ul {
+  padding: 0;
+}
 .sidebar {
   height: 100%;
   background: #f6f6fb;
@@ -76,7 +79,7 @@
   padding: 10px;
 }
 
-/* Mobile behavior */
+/* Mobile */
 @media (max-width: 767px) {
   .sidebar {
     position: fixed;
@@ -93,7 +96,6 @@
     left: 0;
   }
 
-  /* Disable collapse on mobile */
   .sidebar.collapsed {
     width: 220px;
   }
@@ -105,4 +107,30 @@
   inset: 0;
   background: rgba(0,0,0,0.45);
   z-index: 1040;
+}
+
+/* RTL */
+.sidebar.rtl {
+  border-right: none;
+  border-left: 1px solid #e5e7eb;
+}
+
+.menu-item.rtl {
+  flex-direction: row-reverse;
+  padding-left: 14px;
+  padding-right: 10px;
+}
+
+.menu-item.rtl i {
+  order: 2; /* الأيقونة على اليمين */
+}
+
+.menu-item.rtl span {
+  order: 1; /* النص على اليسار */
+}
+
+/* Active indicator RTL */
+.menu-item.rtl.nav-link.active::before {
+  left: auto;
+  right: 0;
 }

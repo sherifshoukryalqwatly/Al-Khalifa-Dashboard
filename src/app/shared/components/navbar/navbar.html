@@ -12,25 +12,26 @@
 
             <!-- Localization Section -->
             <div class="bg-light text-center">
-                <div class="dropdown">
-                    <button
-                    class="btn btn-light btn-sm rounded-circle"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    >
-                    <i class="bi bi-globe fs-5 text-secondary"></i>
-                    </button>
+            <div class="dropdown">
+                <button
+                class="btn btn-light btn-sm rounded-circle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >
+                <i class="bi bi-globe fs-5 text-secondary"></i>
+                </button>
 
-                    <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                    <li>
-                        <a class="dropdown-item" href="#">English</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">العربية</a>
-                    </li>
-                    </ul>
-                </div>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                <li>
+                    <button class="dropdown-item" (click)="changeLang('en')">English</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" (click)="changeLang('ar')">العربية</button>
+                </li>
+                </ul>
             </div>
+            </div>
+
 
             <!-- 🔔 Notifications Button -->
             <button

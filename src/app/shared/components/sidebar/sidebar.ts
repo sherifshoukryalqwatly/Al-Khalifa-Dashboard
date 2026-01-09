@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { AnalyticsRoutingModule } from "../../../features/analytics/analytics-routing-module";
 import { CommonModule } from '@angular/common';
 
@@ -6,14 +6,14 @@ import { CommonModule } from '@angular/common';
   selector: 'app-sidebar',
   imports: [AnalyticsRoutingModule,CommonModule],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.css',
+  styleUrls: ['./sidebar.css'],
 })
 export class Sidebar {
-  isCollapsed = false;
-  isMobileOpen = false;
-
+  @Input() isCollapsed = false;
+  @Input() direction: 'ltr' | 'rtl' = 'ltr';
   @Output() collapsedChange = new EventEmitter<boolean>();
 
+  isMobileOpen = false;
   menu = [
     { label: 'Dashboard', link: 'dashboard', icon: 'bi-speedometer2' },
     { label: 'Analytics', link: '/analytics', icon: 'bi-bar-chart' },

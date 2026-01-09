@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { LangService } from './core/services/lang-service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('Khalifa-Dashboard');
+  constructor(private lang: LangService){
+    this.lang.init();
+  }
 }

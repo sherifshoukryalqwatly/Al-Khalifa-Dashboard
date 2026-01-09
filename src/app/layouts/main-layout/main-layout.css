@@ -5,3 +5,49 @@
 html, body {
   overflow-x: hidden;
 }
+
+.main.rtl {
+  flex-direction: row-reverse;
+}
+
+.main.rtl app-sidebar {
+  order: 1; /* sidebar يظهر أولاً من جهة اليمين */
+}
+
+.main.rtl main {
+  order: 2; /* المحتوى الأساسي بعده */
+}
+/* Sidebar brand */
+.sidebar-brand {
+  font-size: 1.2rem;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Automatically flip gap for RTL */
+[dir="rtl"] .sidebar-brand {
+  flex-direction: row-reverse;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* نفس القيمة لLTR/RTL */
+  color: #000;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+[dir="rtl"] .nav-link {
+  flex-direction: row-reverse;
+}
