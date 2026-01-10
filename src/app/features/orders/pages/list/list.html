@@ -1,98 +1,98 @@
 <div class="container-fluid">
 
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <h4 class="fw-semibold mb-0 p-2">
+      {{ 'ORDERS.TITLE' | translate }}
+    </h4>
 
-    <!-- Page Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-semibold mb-0 p-2">Orders</h4>
+    <a routerLink="/orders/pending" class="btn btn-warning">
+      {{ 'ORDERS.PENDING' | translate }}
+    </a>
+  </div>
 
-        <a routerLink="/orders/pending" class="btn btn-warning">
-            Pending Order
-        </a>
-    </div>
-
-    <!-- Filters -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search order..." />
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>All Status</option>
-                        <option>Pending</option>
-                        <option>Completed</option>
-                        <option>Cancelled</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>All Payment</option>
-                        <option>Paid</option>
-                        <option>Unpaid</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-outline-secondary w-100">
-                        <i class="bi bi-funnel me-1"></i>Filter
-                    </button>
-                </div>
-            </div>
+  <!-- Filters -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control"
+                 [placeholder]="'ORDERS.SEARCH' | translate" />
         </div>
-    </div>
 
-    <!-- Orders Table -->
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Status</th>
-                    <th>Total</th>
-                    <th class="text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>#1024</td>
-                    <td>Ahmed Ali</td>
-                    <td><span class="badge bg-success">Completed</span></td>
-                    <td>$120</td>
-                    <td class="text-end">
-                    <a routerLink="/orders/details/22" class="btn btn-sm btn-outline-secondary me-1">
-                        <i class="bi bi-eye"></i>
-                    </a>
-                    <a class="btn btn-sm btn-outline-primary me-1" routerLink="/orders/edit/22">
-                        <i class="bi bi-pencil"></i>
-                    </a>
-                    <button class="btn btn-sm btn-outline-danger">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>#1025</td>
-                    <td>Sara Mohamed</td>
-                    <td><span class="badge bg-warning">Pending</span></td>
-                    <td>$75</td>
-                    <td class="d-flex justify-content-end w-fit-content">
-                        <a routerLink="/orders/details/22" class="btn btn-sm btn-outline-secondary me-1">
-                            <i class="bi bi-eye"></i>
-                        </a>
-                        <a class="btn btn-sm btn-outline-primary me-1" routerLink="/orders/edit/22">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'ORDERS.ALL_STATUS' | translate }}</option>
+            <option>{{ 'ORDERS.PENDING_STATUS' | translate }}</option>
+            <option>{{ 'ORDERS.COMPLETED_STATUS' | translate }}</option>
+            <option>{{ 'ORDERS.CANCELLED_STATUS' | translate }}</option>
+          </select>
+        </div>
 
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'ORDERS.ALL_PAYMENT' | translate }}</option>
+            <option>{{ 'ORDERS.PAID' | translate }}</option>
+            <option>{{ 'ORDERS.UNPAID' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-outline-secondary w-100">
+            <i class="bi bi-funnel me-1"></i>{{ 'ORDERS.FILTER' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orders Table -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>{{ 'ORDERS.ID' | translate }}</th>
+          <th>{{ 'ORDERS.CUSTOMER' | translate }}</th>
+          <th>{{ 'ORDERS.STATUS' | translate }}</th>
+          <th>{{ 'ORDERS.TOTAL' | translate }}</th>
+          <th class="text-end">{{ 'COMMON.ACTIONS' | translate }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (order of orders; track order.id) {
+          <tr>
+            <td>{{ order.id }}</td>
+            <td>#{{ order.code }}</td>
+            <td>{{ order.customer[currentLang] }}</td>
+
+            <td>
+              <span class="badge" [ngClass]="getStatusClass(order.status)">
+                {{ getStatusLabel(order.status) }}
+              </span>
+            </td>
+
+            <td>${{ order.total }}</td>
+
+            <td class="text-end">
+              <a class="btn btn-sm btn-outline-secondary m-1"
+                 [routerLink]="['/orders/details', order.id]">
+                <i class="bi bi-eye"></i>
+              </a>
+
+              <a class="btn btn-sm btn-outline-primary m-1"
+                 [routerLink]="['/orders/edit', order.id]">
+                <i class="bi bi-pencil"></i>
+              </a>
+
+              <button class="btn btn-sm btn-outline-danger m-1">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

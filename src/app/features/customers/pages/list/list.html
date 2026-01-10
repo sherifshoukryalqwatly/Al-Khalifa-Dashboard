@@ -2,11 +2,11 @@
 
     <!-- Page Header -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="fw-semibold mb-0">Users</h4>
+        <h4 class="fw-semibold mb-0">{{ 'USERS.TITLE' | translate }}</h4>
 
         <a routerLink="/customers/add" class="btn btn-primary">
             <i class="bi bi-person-plus me-2"></i>
-            Add User
+            {{ 'USERS.ADD' | translate }}
         </a>
     </div>
 
@@ -15,25 +15,25 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search user..." />
+                    <input type="text" class="form-control" [placeholder]="'USERS.SEARCH' | translate" />
                 </div>
                 <div class="col-md-3">
                     <select class="form-select">
-                    <option selected>All Roles</option>
-                    <option>Admin</option>
-                    <option>User</option>
+                        <option selected>{{ 'USERS.ALL_ROLES' | translate }}</option>
+                        <option>{{ 'USERS.ROLE_ADMIN' | translate }}</option>
+                        <option>{{ 'USERS.ROLE_USER' | translate }}</option>
                     </select>
                 </div>
                 <div class="col-md-3">
                     <select class="form-select">
-                    <option selected>Status</option>
-                    <option>Active</option>
-                    <option>Inactive</option>
+                        <option selected>{{ 'USERS.STATUS' | translate }}</option>
+                        <option>{{ 'USERS.ACTIVE' | translate }}</option>
+                        <option>{{ 'USERS.INACTIVE' | translate }}</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-outline-secondary w-100">
-                        <i class="bi bi-funnel me-1"></i>Filter
+                          <i class="bi bi-funnel me-1"></i>{{ 'USERS.FILTER' | translate }}
                     </button>
                 </div>
             </div>
@@ -45,57 +45,51 @@
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>
-                    <th>#</th>
-                    <th>User</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                    <th class="text-end">Actions</th>
+                    <th>{{ 'USERS.TABLE.ID' | translate }}</th>
+                    <th>{{ 'USERS.TABLE.USER' | translate }}</th>
+                    <th>{{ 'USERS.TABLE.EMAIL' | translate }}</th>
+                    <th>{{ 'USERS.TABLE.ROLE' | translate }}</th>
+                    <th>{{ 'USERS.TABLE.STATUS' | translate }}</th>
+                    <th class="text-end">{{ 'USERS.TABLE.ACTIONS' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td class="d-flex align-items-center gap-2">
-                        <img src="https://via.placeholder.com/40" class="rounded-circle" />
-                        Sherif Shoukry
+                @for (user of users; track user.id) {
+                    <tr>
+                    <td>{{ user.id }}</td>
+
+                    <td>
+                        <img [src]="user.avatar" class="rounded-circle" width="40" height="40" />
+                        {{ user.name[currentLang] }}
                     </td>
-                    <td>sherif@example.com</td>
-                    <td>Admin</td>
-                    <td><span class="badge bg-success">Active</span></td>
-                    <td class="d-flex justify-content-end w-fit-content">
-                        <a class="btn btn-sm btn-outline-secondary me-1" routerLink="/customers/details/123">
-                            <i class="bi bi-eye"></i>
+
+                    <td>{{ user.email }}</td>
+
+                    <td>{{ user.role[currentLang] }}</td>
+
+                    <td>
+                        <span class="badge" [ngClass]="getStatusClass(user.status)">
+                        {{ getStatusLabel(user.status) }}
+                        </span>
+                    </td>
+
+                    <td class="">
+                        <a class="btn btn-sm btn-outline-secondary m-1"
+                        [routerLink]="['/customers/details', user.id]">
+                        <i class="bi bi-eye"></i>
                         </a>
-                        <a routerLink="/customers/edit/123" class="btn btn-sm btn-outline-primary me-1">
-                            <i class="bi bi-pencil"></i>
+
+                        <a class="btn btn-sm btn-outline-primary m-1"
+                        [routerLink]="['/customers/edit', user.id]">
+                        <i class="bi bi-pencil"></i>
                         </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
+
+                        <button class="btn btn-sm btn-outline-danger m-1">
+                        <i class="bi bi-trash"></i>
                         </button>
                     </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="d-flex align-items-center gap-2">
-                        <img src="https://via.placeholder.com/40" class="rounded-circle" />
-                        Sara Mohamed
-                    </td>
-                    <td>sara@example.com</td>
-                    <td>User</td>
-                    <td><span class="badge bg-warning">Inactive</span></td>
-                    <td class="text-end">
-                        <a class="btn btn-sm btn-outline-secondary me-1" routerLink="/customers/details/123">
-                            <i class="bi bi-eye"></i>
-                        </a>
-                        <a class="btn btn-sm btn-outline-primary me-1" routerLink="/customers/edit/123">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

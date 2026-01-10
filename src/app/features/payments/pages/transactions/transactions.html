@@ -1,90 +1,92 @@
 <div class="container-fluid">
-    <!-- Page Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-semibold mb-2">Payments</h4>
-        <a routerLink="/payments/refunds" class="btn btn-danger">
-            Refund Payment
-        </a>
-    </div>
-    <!-- Filters -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search payment..." />
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>Status</option>
-                        <option>Paid</option>
-                        <option>Unpaid</option>
-                        <option>Refunded</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>Payment Method</option>
-                        <option>Credit Card</option>
-                        <option>PayPal</option>
-                        <option>Bank Transfer</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-outline-secondary w-100">
-                        <i class="bi bi-funnel me-1"></i>Filter
-                    </button>
-                </div>
-            </div>
+
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <h4 class="fw-semibold mb-2">{{ 'PAYMENTS.TITLE' | translate }}</h4>
+
+    <a routerLink="/payments/refunds" class="btn btn-danger">
+      {{ 'PAYMENTS.REFUND' | translate }}
+    </a>
+  </div>
+
+  <!-- Filters -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input class="form-control" [placeholder]="'PAYMENTS.SEARCH' | translate" />
         </div>
+
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'PAYMENTS.ALL_STATUS' | translate }}</option>
+            <option>{{ 'PAYMENTS.PAID' | translate }}</option>
+            <option>{{ 'PAYMENTS.UNPAID' | translate }}</option>
+            <option>{{ 'PAYMENTS.REFUNDED' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'PAYMENTS.ALL_METHODS' | translate }}</option>
+            <option>{{ 'PAYMENTS.CARD' | translate }}</option>
+            <option>{{ 'PAYMENTS.PAYPAL' | translate }}</option>
+            <option>{{ 'PAYMENTS.BANK' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-outline-secondary w-100">
+            <i class="bi bi-funnel me-1"></i>{{ 'COMMON.FILTER' | translate }}
+          </button>
+        </div>
+      </div>
     </div>
-    <!-- Payments Table -->
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Amount</th>
-                    <th>Method</th>
-                    <th>Status</th>
-                    <th class="text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>#1024</td>
-                    <td>Ahmed Ali</td>
-                    <td>$120</td>
-                    <td>Credit Card</td>
-                    <td><span class="badge bg-success">Paid</span></td>
-                    <td class="d-flex justify-content-end">
-                        <a class="btn btn-sm btn-outline-secondary me-1" routerLink="/payments/details/123">
-                            <i class="bi bi-eye"></i>
-                        </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>#1025</td>
-                    <td>Sara Mohamed</td>
-                    <td>$75</td>
-                    <td>PayPal</td>
-                    <td><span class="badge bg-warning">Unpaid</span></td>
-                    <td class="d-flex justify-content-end">
-                        <a class="btn btn-sm btn-outline-secondary me-1" routerLink="/payments/details/123">
-                            <i class="bi bi-eye"></i>
-                        </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  </div>
+
+  <!-- Payments Table -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>{{ 'PAYMENTS.ORDER' | translate }}</th>
+          <th>{{ 'PAYMENTS.CUSTOMER' | translate }}</th>
+          <th>{{ 'PAYMENTS.AMOUNT' | translate }}</th>
+          <th>{{ 'PAYMENTS.METHOD' | translate }}</th>
+          <th>{{ 'PAYMENTS.STATUS' | translate }}</th>
+          <th class="text-end">{{ 'COMMON.ACTIONS' | translate }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (payment of payments; track payment.id) {
+          <tr>
+            <td>{{ payment.id }}</td>
+            <td>#{{ payment.orderId }}</td>
+            <td>{{ payment.customer }}</td>
+            <td>\${{ payment.amount }}</td>
+            <td>{{ payment.method[currentLang] }}</td>
+
+            <td>
+              <span class="badge" [ngClass]="getStatusClass(payment.status)">
+                {{ getStatusLabel(payment.status) }}
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a class="btn btn-sm btn-outline-secondary m-1"
+                 [routerLink]="['/payments/details', payment.id]">
+                <i class="bi bi-eye"></i>
+              </a>
+
+              <button class="btn btn-sm btn-outline-danger m-1">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

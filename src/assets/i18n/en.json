@@ -1,6 +1,283 @@
 {
   "NAV": {
+    "SITE_NAME": "Koora",
+    "SEARCH": "Search",
+    "NOTIFICATIONS": "Notifications",
+    "VIEW_ALL": "View All",
+    "PROFILE": "Profile",
+    "LOGOUT": "Logout",
+    "LANGUAGE": "Language",
+    "NEW_ORDER": "New Order",
+    "ORDER_PLACED": "Order #1245 placed",
+    "PAYMENT_RECEIVED": "Payment Received",
+    "PAID_AMOUNT": "$250 paid"
+  },
+  "SIDEBAR": {
+    "SITE_NAME": "Dashboard",
     "DASHBOARD": "Dashboard",
-    "ORDERS": "Orders"
+    "ANALYTICS": "Analytics",
+    "PRODUCTS": "Products",
+    "USERS": "Users",
+    "CATEGORIES": "Categories",
+    "ORDERS": "Orders",
+    "COUPONS": "Coupons",
+    "INVENTORY": "Inventory",
+    "PAYMENTS": "Payments",
+    "REVIEWS": "Reviews",
+    "SHIPPING": "Shipping",
+    "SETTINGS": "Settings",
+    "SUPPORT": "Support",
+    "LOGOUT": "Logout"
+  },
+  "FOOTER": {
+    "SITE_NAME": "Admin Dashboard",
+    "RIGHTS": "All rights reserved.",
+    "PRIVACY": "Privacy",
+    "TERMS": "Terms",
+    "SUPPORT": "Support"
+  },
+  "DASHBOARD": {
+    "TITLE": "Dashboard",
+    "WELCOME": "Welcome back",
+    "RECENT_ORDERS": "Recent Orders",
+    "CUSTOMER": "Customer",
+    "STATUS": "Status",
+    "TOTAL": "Total",
+    "STATUS_COMPLETED": "Completed",
+    "STATUS_PENDING": "Pending",
+    "STATUS_CANCELLED": "Cancelled",
+    "QUICK_ACTIONS": "Quick Actions",
+    "TOTAL_SALES": "Total Sales",
+    "ORDERS": "Orders",
+    "CUSTOMERS": "Customers",
+    "REVIEWS": "Reviews"
+  },
+  "QUICK": {
+    "ADD_PRODUCT": "Add Product",
+    "INVENTORY": "Inventory",
+    "VIEW_ANALYTICS": "View Analytics"
+  },
+  "ANALYTICS": {
+    "TITLE": "Analytics Overview",
+    "LAST_30_DAYS": "Last 30 Days",
+    "TOTAL_REVENUE": "Total Revenue",
+    "ORDERS": "Orders",
+    "USERS": "Users",
+    "PRODUCTS": "Products",
+    "REVENUE_ORDERS_TREND": "Revenue & Orders Trend",
+    "LINE_CHART_PLACEHOLDER": "Combined Line Chart Placeholder",
+    "TRAFFIC_SOURCES": "Traffic Sources",
+    "PIE_CHART_PLACEHOLDER": "Pie Chart Placeholder",
+    "USERS_ANALYTICS": "Users Analytics",
+    "USERS_SUB": "Growth & engagement",
+    "PRODUCTS_ANALYTICS": "Products Analytics",
+    "PRODUCTS_SUB": "Stock & performance",
+    "SALES_ANALYTICS": "Sales Analytics",
+    "SALES_SUB": "Revenue & orders",
+    "KEY_INSIGHTS": "Key Insights",
+    "INSIGHT_REVENUE": "📈 Revenue increased 12% compared to last period",
+    "INSIGHT_USERS": "👥 User registrations grew by 8%",
+    "INSIGHT_STOCK": "📦 170 products are currently out of stock"
+  },
+  "PRODUCTS": {
+    "TITLE": "Products",
+    "ADD": "Add Product",
+    "SEARCH": "Search product...",
+    "ALL_CATEGORIES": "All Categories",
+    "ELECTRONICS": "Electronics",
+    "FASHION": "Fashion",
+    "STATUS": "Status",
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "FILTER": "Filter",
+    "PRODUCT": "Product",
+    "CATEGORY": "Category",
+    "PRICE": "Price",
+    "STOCK": "Stock",
+    "ACTIONS": "Actions",
+    "IN_STOCK": "In Stock",
+    "LOW_STOCK": "Low Stock"
+  },
+  "USERS": {
+    "TITLE": "Users",
+    "ADD": "Add User",
+    "SEARCH": "Search user...",
+    "ALL_ROLES": "All Roles",
+    "ROLE_ADMIN": "Admin",
+    "ROLE_USER": "User",
+    "STATUS": "Status",
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "FILTER": "Filter",
+    "TABLE": {
+      "ID": "#",
+      "USER": "User",
+      "EMAIL": "Email",
+      "ROLE": "Role",
+      "STATUS": "Status",
+      "ACTIONS": "Actions"
+    }
+  },
+  "CATEGORIES": {
+    "TITLE": "Categories",
+    "ADD": "Add Category",
+    "NAME": "Category Name",
+    "DESC": "Description",
+    "STATUS": "Status"
+  },
+  "ORDERS": {
+    "TITLE": "Orders",
+    "PENDING": "Pending Orders",
+    "SEARCH": "Search order...",
+    "ALL_STATUS": "All Status",
+    "PENDING_STATUS": "Pending",
+    "COMPLETED_STATUS": "Completed",
+    "CANCELLED_STATUS": "Cancelled",
+    "ALL_PAYMENT": "All Payment",
+    "PAID": "Paid",
+    "UNPAID": "Unpaid",
+    "FILTER": "Filter",
+    "ID": "Order ID",
+    "CUSTOMER": "Customer",
+    "STATUS": "Status",
+    "TOTAL": "Total"
+  },
+  "COUPONS": {
+    "TITLE": "Coupons",
+    "ADD": "Add Coupon",
+    "SEARCH": "Search coupon...",
+    "ALL_STATUS": "All Status",
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "CODE": "Code",
+    "DISCOUNT": "Discount",
+    "EXPIRY": "Expiry",
+    "STATUS": "Status"
+  },
+  "COMMON": {
+    "ACTIONS": "Actions",
+    "FILTER": "Filter"
+  },
+  "INVENTORY": {
+    "TITLE": "Inventory",
+    "ADD": "Add Inventory Item",
+    "SEARCH": "Search item...",
+    "ALL_CATEGORIES": "All Categories",
+    "ALL_STATUS": "All Status",
+    "IN_STOCK": "In Stock",
+    "LOW_STOCK": "Low Stock",
+    "OUT_STOCK": "Out of Stock",
+    "ITEM": "Item",
+    "CATEGORY": "Category",
+    "QTY": "Quantity",
+    "STATUS": "Status"
+  },
+  "PAYMENTS": {
+    "TITLE": "Payments",
+    "REFUND": "Refunds Payment",
+    "SEARCH": "Search payment...",
+    "ALL_STATUS": "All Status",
+    "PAID": "Paid",
+    "UNPAID": "Unpaid",
+    "REFUNDED": "Refunded",
+    "ALL_METHODS": "Payment Method",
+    "CARD": "Credit Card",
+    "PAYPAL": "PayPal",
+    "BANK": "Bank Transfer",
+    "ORDER": "Order ID",
+    "CUSTOMER": "Customer",
+    "AMOUNT": "Amount",
+    "METHOD": "Method",
+    "STATUS": "Status"
+  },
+  "REVIEWS": {
+    "TITLE": "Reviews",
+    "REPORTED": "Reported Reviews",
+    "SEARCH": "Search product or customer...",
+    "STATUS": "Status",
+    "PENDING": "Pending",
+    "APPROVED": "Approved",
+    "REJECTED": "Rejected",
+    "RATING": "Rating",
+    "PRODUCT": "Product",
+    "CUSTOMER": "Customer",
+    "COMMENT": "Comment"
+  },
+  "SHIPPING": {
+    "TITLE": "Shipping",
+    "ZONES": "Zones Shipping Entry",
+    "SEARCH": "Search order or customer...",
+    "STATUS": "Status",
+    "PENDING": "Pending",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered",
+    "CANCELLED": "Cancelled",
+    "CARRIER": "Carrier",
+    "ORDER": "Order ID",
+    "CUSTOMER": "Customer",
+    "TRACKING": "Tracking Number"
+  },
+  "SETTINGS": {
+    "STORE": {
+      "TITLE": "Store Settings",
+      "DESC": "Manage store name, address, currency, and contact info.",
+      "BTN": "Go to Store"
+    },
+    "PAYMENT": {
+      "TITLE": "Payment Settings",
+      "DESC": "Manage payment gateways and API keys.",
+      "BTN": "Go to Payment"
+    },
+    "EMAIL": {
+      "TITLE": "Email Settings",
+      "DESC": "Configure SMTP, SendGrid, and Mailgun settings.",
+      "BTN": "Go to Email"
+    }
+  },
+  "SUPPORT": {
+    "TITLE": "Support Center",
+    "SUBTITLE": "Need help? We’re here for you.",
+
+    "CONTACT": {
+      "EMAIL": { "TITLE": "Email Support", "VALUE": "support@yourcompany.com" },
+      "PHONE": { "TITLE": "Phone Support", "VALUE": "+1 234 567 890" },
+      "DOCS": { "TITLE": "Documentation", "VALUE": "Read our guides and FAQs" }
+    },
+
+    "FAQ": {
+      "TITLE": "Frequently Asked Questions",
+      "RESET": {
+        "Q": "How can I reset my password?",
+        "A": "Go to Settings → Account → Reset Password and follow the instructions."
+      },
+      "CONTACT": {
+        "Q": "How do I contact support?",
+        "A": "You can reach us via email or phone during business hours."
+      },
+      "HOURS": {
+        "Q": "What are your support hours?",
+        "A": "Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+3)"
+      }
+    },
+
+    "HOURS": {
+      "TITLE": "Support Hours",
+      "SUN": "Sunday – Thursday: 9:00 AM – 6:00 PM",
+      "FRI": "Friday: Closed",
+      "SAT": "Saturday: Closed"
+    }
+  },
+  "PROFILE": {
+    "TITLE": "My Profile",
+    "SUBTITLE": "Manage your personal information",
+    "EDIT_BTN": "Edit Profile",
+    "CHANGE_PASSWORD": "Change Password",
+    "ACCOUNT_INFO": "Account Information",
+    "FULL_NAME": "Full Name",
+    "EMAIL": "Email",
+    "ROLE": "Role",
+    "PHONE": "Phone",
+    "JOINED": "Joined",
+    "STATUS": "Status"
   }
 }

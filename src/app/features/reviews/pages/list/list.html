@@ -1,84 +1,92 @@
 <div class="container-fluid">
-    <!-- Page Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-semibold mb-2">Reviews</h4>
-            <a routerLink="/reviews/reported" class="btn btn-danger">
-                Reported Reviews
-            </a>
-    </div>
-    <!-- Filters -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <div class="row g-3">
-                <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Search product or customer..." />
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>Status</option>
-                        <option>Pending</option>
-                        <option>Approved</option>
-                        <option>Rejected</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>Rating</option>
-                        <option>1 Star</option>
-                        <option>2 Stars</option>
-                        <option>3 Stars</option>
-                        <option>4 Stars</option>
-                        <option>5 Stars</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <button class="btn btn-outline-secondary w-100">
-                        <i class="bi bi-funnel me-1"></i>Filter
-                    </button>
-                </div>
-            </div>
+
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <h4 class="fw-semibold mb-2">{{ 'REVIEWS.TITLE' | translate }}</h4>
+
+    <a routerLink="/reviews/reported" class="btn btn-danger">
+      {{ 'REVIEWS.REPORTED' | translate }}
+    </a>
+  </div>
+
+  <!-- Filters -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <input class="form-control" [placeholder]="'REVIEWS.SEARCH' | translate" />
         </div>
+
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'REVIEWS.STATUS' | translate }}</option>
+            <option>{{ 'REVIEWS.PENDING' | translate }}</option>
+            <option>{{ 'REVIEWS.APPROVED' | translate }}</option>
+            <option>{{ 'REVIEWS.REJECTED' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'REVIEWS.RATING' | translate }}</option>
+            <option>1 ⭐</option>
+            <option>2 ⭐⭐</option>
+            <option>3 ⭐⭐⭐</option>
+            <option>4 ⭐⭐⭐⭐</option>
+            <option>5 ⭐⭐⭐⭐⭐</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <button class="btn btn-outline-secondary w-100">
+            <i class="bi bi-funnel me-1"></i>{{ 'COMMON.FILTER' | translate }}
+          </button>
+        </div>
+      </div>
     </div>
-    <!-- Reviews Table -->
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Product</th>
-                    <th>Customer</th>
-                    <th>Rating</th>
-                    <th>Comment</th>
-                    <th>Status</th>
-                    <th class="text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>iPhone 14</td>
-                    <td>Ahmed Ali</td>
-                    <td>★★★★☆</td>
-                    <td>Good product</td>
-                    <td><span class="badge bg-warning">Pending</span></td>
-                    <td class="d-flex justify-content-end">
-                        <button class="btn btn-sm btn-outline-success me-1"><i class="bi bi-check"></i></button>
-                        <button class="btn btn-sm btn-outline-danger me-1"><i class="bi bi-x"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Adidas Shoes</td>
-                    <td>Sara Mohamed</td>
-                    <td>★★★☆☆</td>
-                    <td>Average quality</td>
-                    <td><span class="badge bg-success">Approved</span></td>
-                    <td class="d-flex justify-content-end">
-                        <button class="btn btn-sm btn-outline-success me-1"><i class="bi bi-check"></i></button>
-                        <button class="btn btn-sm btn-outline-danger me-1"><i class="bi bi-x"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  </div>
+
+  <!-- Reviews Table -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>{{ 'REVIEWS.PRODUCT' | translate }}</th>
+          <th>{{ 'REVIEWS.CUSTOMER' | translate }}</th>
+          <th>{{ 'REVIEWS.RATING' | translate }}</th>
+          <th>{{ 'REVIEWS.COMMENT' | translate }}</th>
+          <th>{{ 'REVIEWS.STATUS' | translate }}</th>
+          <th class="text-end">{{ 'COMMON.ACTIONS' | translate }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (review of reviews; track review.id) {
+          <tr>
+            <td>{{ review.id }}</td>
+            <td>{{ review.product[currentLang] }}</td>
+            <td>{{ review.customer }}</td>
+            <td>{{ getStars(review.rating) }}</td>
+            <td>{{ review.comment[currentLang] }}</td>
+
+            <td>
+              <span class="badge" [ngClass]="getStatusClass(review.status)">
+                {{ getStatusLabel(review.status) }}
+              </span>
+            </td>
+
+            <td class="text-end">
+              <button class="btn btn-sm btn-outline-success m-1">
+                <i class="bi bi-check"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-danger m-1">
+                <i class="bi bi-x"></i>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

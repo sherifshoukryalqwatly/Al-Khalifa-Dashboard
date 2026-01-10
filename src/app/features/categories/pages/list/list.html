@@ -1,60 +1,58 @@
 <div class="container-fluid">
 
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <h4 class="fw-semibold mb-0 p-2">
+      {{ 'CATEGORIES.TITLE' | translate }}
+    </h4>
 
-    <!-- Page Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-semibold mb-0 p-2">Categories</h4>
+    <a routerLink="/categories/add" class="btn btn-primary">
+      <i class="bi bi-plus-circle me-2"></i>
+      {{ 'CATEGORIES.ADD' | translate }}
+    </a>
+  </div>
 
+  <!-- Categories Table -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>{{ 'CATEGORIES.NAME' | translate }}</th>
+          <th>{{ 'CATEGORIES.DESC' | translate }}</th>
+          <th>{{ 'CATEGORIES.STATUS' | translate }}</th>
+          <th class="text-end">{{ 'COMMON.ACTIONS' | translate }}</th>
+        </tr>
+      </thead>
 
-        <a routerLink="/categories/add" class="btn btn-primary">
-            <i class="bi bi-plus-circle me-2"></i>
-            Add Category
-        </a>
-    </div>
+      <tbody>
+        @for (cat of categories; track cat.id) {
+          <tr>
+            <td>{{ cat.id }}</td>
 
+            <td>{{ cat.name[currentLang] }}</td>
 
-<!-- Categories Table -->
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Category Name</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th class="text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Electronics</td>
-                    <td>Smartphones, laptops, gadgets</td>
-                    <td><span class="badge bg-success">Active</span></td>
-                    <td class="d-flex justify-content-end w-fit-content">
-                        <a class="btn btn-sm btn-outline-primary me-1" routerLink="/categories/edit/123">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <a class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                <td>2</td>
-                <td>Fashion</td>
-                <td>Clothing, shoes, accessories</td>
-                <td><span class="badge bg-warning">Inactive</span></td>
-                <td class="text-end">
-                    <button class="btn btn-sm btn-outline-primary me-1">
-                        <i class="bi bi-pencil"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-danger">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <td>{{ cat.description[currentLang] }}</td>
+
+            <td>
+              <span class="badge" [ngClass]="getStatusClass(cat.status)">
+                {{ getStatusLabel(cat.status) }}
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a class="btn btn-sm btn-outline-primary m-1"
+                 [routerLink]="['/categories/edit', cat.id]">
+                <i class="bi bi-pencil"></i>
+              </a>
+
+              <button class="btn btn-sm btn-outline-danger m-1">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

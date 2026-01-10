@@ -2,108 +2,104 @@
 
     <!-- Page Header -->
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-semibold mb-0 me-2 p-2">Products</h4>
-        <a class="btn btn-primary" routerLink="/products/add">
-            <i class="bi bi-plus-circle me-2"></i>
-            Add Product
-        </a>
+    <h4 class="fw-semibold mb-0 me-2 p-2">{{ 'PRODUCTS.TITLE' | translate }}</h4>
+
+    <a class="btn btn-primary" routerLink="/products/add">
+        <i class="bi bi-plus-circle me-2"></i>
+        {{ 'PRODUCTS.ADD' | translate }}
+    </a>
     </div>
 
     <!-- Filters -->
     <div class="card mb-4">
-        <div class="card-body">
-            <div class="row g-3">
+    <div class="card-body">
+        <div class="row g-3">
 
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search product..." />
-                </div>
-
-                <div class="col-md-3">
-                <select class="form-select">
-                <option selected>All Categories</option>
-                <option>Electronics</option>
-                <option>Fashion</option>
-                </select>
-                </div>
-
-
-                <div class="col-md-3">
-                <select class="form-select">
-                <option selected>Status</option>
-                <option>Active</option>
-                <option>Inactive</option>
-                </select>
-                </div>
-
-
-                <div class="col-md-2">
-                <button class="btn btn-outline-secondary w-100">
-                <i class="bi bi-funnel me-1"></i>Filter
-                </button>
-                </div>
-            </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" [placeholder]="'PRODUCTS.SEARCH' | translate" />
         </div>
+
+        <div class="col-md-3">
+            <select class="form-select">
+            <option selected>{{ 'PRODUCTS.ALL_CATEGORIES' | translate }}</option>
+            <option>{{ 'PRODUCTS.ELECTRONICS' | translate }}</option>
+            <option>{{ 'PRODUCTS.FASHION' | translate }}</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <select class="form-select">
+            <option selected>{{ 'PRODUCTS.STATUS' | translate }}</option>
+            <option>{{ 'PRODUCTS.ACTIVE' | translate }}</option>
+            <option>{{ 'PRODUCTS.INACTIVE' | translate }}</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-outline-secondary w-100">
+            <i class="bi bi-funnel me-1"></i>{{ 'PRODUCTS.FILTER' | translate }}
+            </button>
+        </div>
+
+        </div>
+    </div>
     </div>
 
     <!-- Products Table -->
-     <div class="table-responsive">
+    <div class="table-responsive">
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>
-                    <th>#</th>
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Status</th>
-                    <th class="text-end">Actions</th>
+                <th>#</th>
+                <th>{{ 'PRODUCTS.PRODUCT' | translate }}</th>
+                <th>{{ 'PRODUCTS.CATEGORY' | translate }}</th>
+                <th>{{ 'PRODUCTS.PRICE' | translate }}</th>
+                <th>{{ 'PRODUCTS.STOCK' | translate }}</th>
+                <th>{{ 'PRODUCTS.STATUS' | translate }}</th>
+                <th class="text-end">{{ 'PRODUCTS.ACTIONS' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td class="d-flex align-items-center gap-2">
-                        <img src="data:image/webp;base64,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" class="rounded" />
-                        iPhone 14
-                    </td>
-                    <td>Electronics</td>
-                    <td>$999</td>
-                    <td><span class="badge bg-success">In Stock</span></td>
-                    <td><span class="badge bg-primary">Active</span></td>
-                    <td class="d-flex justify-content-end  w-fit-content">
-                        <a  class="btn btn-sm btn-outline-secondary m-1" routerLink="/products/details/123">
-                            <i class="bi bi-eye"></i>  
-                        </a>
-                        <a class="btn btn-sm btn-outline-secondary m-1" routerLink="/products/edit/123">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <a class="btn btn-sm btn-outline-danger m-1">
-                            <i class="bi bi-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="d-flex align-items-center gap-2">
-                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/b0b6d4a107ad4e84b3baaf8700866f07_9366/H03472_01_standard.jpg" class="rounded" />
-                        Adidas Shoes
-                    </td>
-                    <td>Fashion</td>
-                    <td>$120</td>
-                    <td><span class="badge bg-warning">Low Stock</span></td>
-                    <td><span class="badge bg-primary">Active</span></td>
-                    <td class="d-flex justify-content-end w-fit-content">
-                        <a class="btn btn-sm btn-outline-secondary m-1" routerLink="/products/details/123">
+                @for (product of products; track product.id) {
+                    <tr>
+
+                        <td>{{ product.id }}</td>
+
+                        <td>
+                            <img [src]="product.image" class="rounded" width="50" height="50" />
+                            {{ product.name[currentLang] }}
+                        </td>
+
+                        <td>{{ product.category[currentLang] }}</td>
+
+                        <td>${{ product.price }}</td>
+
+                        <td>
+                        <span class="badge" [ngClass]="getStockBadge(product.stockStatus)">
+                            {{ getStockLabel(product.stockStatus) }}
+                        </span>
+                        </td>
+
+                        <td>
+                        <span class="badge bg-primary">
+                            {{ getStatusLabel(product.status) }}
+                        </span>
+                        </td>
+
+                        <td>
+                        <a class="btn btn-sm btn-outline-secondary m-1" [routerLink]="['/products/details', product.id]">
                             <i class="bi bi-eye"></i>
                         </a>
-                        <a class="btn btn-sm btn-outline-secondary m-1" routerLink="/products/edit/123">
+                        <a class="btn btn-sm btn-outline-secondary m-1" [routerLink]="['/products/edit', product.id]">
                             <i class="bi bi-pencil"></i>
                         </a>
-                        <a class="btn btn-sm btn-outline-danger m-1">
+                        <button class="btn btn-sm btn-outline-danger m-1">
                             <i class="bi bi-trash"></i>
-                        </a>
-                    </td>
-                </tr>
+                        </button>
+                        </td>
+
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

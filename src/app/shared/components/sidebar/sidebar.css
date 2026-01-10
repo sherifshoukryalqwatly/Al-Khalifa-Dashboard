@@ -1,20 +1,30 @@
+/* Reset */
 ul {
   padding: 0;
+  margin: 0;
+  list-style: none;
 }
+
+/* Sidebar base */
 .sidebar {
   height: 100%;
   background: #f6f6fb;
   color: #000;
   width: 220px;
-  transition: width 0.3s ease, box-shadow 0.3s ease;
+  transition: width 0.3s ease, box-shadow 0.3s ease, left 0.3s ease;
   overflow: hidden;
   border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1050;
 }
 
 .sidebar:hover {
   box-shadow: 4px 0 20px rgba(0,0,0,0.04);
 }
 
+/* Brand */
 .sidebar-brand {
   font-size: 1.2rem;
   color: #000;
@@ -22,8 +32,13 @@ ul {
   cursor: pointer;
   font-weight: bold;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
+/* Menu items */
 .nav-link {
   display: flex;
   align-items: center;
@@ -65,21 +80,23 @@ ul {
   background: #1d4ed8;
 }
 
-/* Collapsed */
+/* Collapsed sidebar (desktop only) */
 .sidebar.collapsed {
   width: 70px;
 }
 
-.sidebar.collapsed span {
-  display: none;
+@media (min-width: 768px) {
+  .sidebar.collapsed span {
+    display: none;
+  }
+
+  .sidebar.collapsed .nav-link {
+    justify-content: center;
+    padding: 10px;
+  }
 }
 
-.sidebar.collapsed .nav-link {
-  justify-content: center;
-  padding: 10px;
-}
-
-/* Mobile */
+/* Mobile behavior */
 @media (max-width: 767px) {
   .sidebar {
     position: fixed;
@@ -87,21 +104,20 @@ ul {
     left: -260px;
     height: 100vh;
     width: 220px;
-    z-index: 1050;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    transition: left 0.3s ease;
   }
 
   .sidebar.mobile-open {
     left: 0;
   }
 
+  /* Disable collapse on mobile */
   .sidebar.collapsed {
     width: 220px;
   }
 }
 
-/* Overlay */
+/* Overlay for mobile */
 .sidebar-overlay {
   position: fixed;
   inset: 0;
@@ -109,7 +125,7 @@ ul {
   z-index: 1040;
 }
 
-/* RTL */
+/* RTL support */
 .sidebar.rtl {
   border-right: none;
   border-left: 1px solid #e5e7eb;
@@ -122,15 +138,20 @@ ul {
 }
 
 .menu-item.rtl i {
-  order: 2; /* الأيقونة على اليمين */
+  order: 2; /* icon right */
 }
 
 .menu-item.rtl span {
-  order: 1; /* النص على اليسار */
+  order: 1; /* text left */
 }
 
 /* Active indicator RTL */
 .menu-item.rtl.nav-link.active::before {
   left: auto;
   right: 0;
+}
+
+/* Logout */
+.mt-auto .nav-link {
+  margin-bottom: 10px;
 }

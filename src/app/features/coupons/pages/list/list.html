@@ -1,81 +1,84 @@
 <div class="container-fluid">
-    <!-- Page Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-semibold mb-2">Coupons</h4>
 
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <h4 class="fw-semibold mb-2">
+      {{ 'COUPONS.TITLE' | translate }}
+    </h4>
 
-        <a routerLink="/coupons/add" class="btn btn-primary">
-            <i class="bi bi-ticket-perforated me-2"></i>
-            Add Coupon
-        </a>
-    </div>
-    <!-- Filters -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search coupon..." />
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>Status</option>
-                        <option>Active</option>
-                        <option>Inactive</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-outline-secondary w-100">
-                        <i class="bi bi-funnel me-1"></i>Filter
-                    </button>
-                </div>
-            </div>
+    <a routerLink="/coupons/add" class="btn btn-primary">
+      <i class="bi bi-ticket-perforated me-2"></i>
+      {{ 'COUPONS.ADD' | translate }}
+    </a>
+  </div>
+
+  <!-- Filters -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input class="form-control"
+                 [placeholder]="'COUPONS.SEARCH' | translate" />
         </div>
+
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>{{ 'COUPONS.ALL_STATUS' | translate }}</option>
+            <option>{{ 'COUPONS.ACTIVE' | translate }}</option>
+            <option>{{ 'COUPONS.INACTIVE' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-outline-secondary w-100">
+            <i class="bi bi-funnel me-1"></i>{{ 'COMMON.FILTER' | translate }}
+          </button>
+        </div>
+      </div>
     </div>
-    <!-- Coupons Table -->
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Code</th>
-                    <th>Discount</th>
-                    <th>Expiry</th>
-                    <th>Status</th>
-                    <th class="text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>NEWYEAR2025</td>
-                    <td>20%</td>
-                    <td>31-12-2025</td>
-                    <td><span class="badge bg-success">Active</span></td>
-                    <td class="d-flex justify-content-end align-items-center">
-                        <a class="btn btn-sm btn-outline-primary me-1" routerLink="/coupons/edit/123">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>SUMMER2025</td>
-                    <td>15%</td>
-                    <td>30-06-2025</td>
-                    <td><span class="badge bg-warning">Inactive</span></td>
-                    <td class="d-flex justify-content-end align-items-center">
-                        <a class="btn btn-sm btn-outline-primary me-1" routerLink="/coupons/edit/123">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <button class="btn btn-sm btn-outline-danger">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  </div>
+
+  <!-- Coupons Table -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>{{ 'COUPONS.CODE' | translate }}</th>
+          <th>{{ 'COUPONS.DISCOUNT' | translate }}</th>
+          <th>{{ 'COUPONS.EXPIRY' | translate }}</th>
+          <th>{{ 'COUPONS.STATUS' | translate }}</th>
+          <th class="text-end">{{ 'COMMON.ACTIONS' | translate }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (coupon of coupons; track coupon.id) {
+          <tr>
+            <td>{{ coupon.id }}</td>
+            <td>{{ coupon.code }}</td>
+            <td>{{ coupon.discount }}%</td>
+            <td>{{ coupon.expiry }}</td>
+
+            <td>
+              <span class="badge" [ngClass]="getStatusClass(coupon.status)">
+                {{ getStatusLabel(coupon.status) }}
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a class="btn btn-sm btn-outline-primary m-1"
+                 [routerLink]="['/coupons/edit', coupon.id]">
+                <i class="bi bi-pencil"></i>
+              </a>
+
+              <button class="btn btn-sm btn-outline-danger m-1">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>
