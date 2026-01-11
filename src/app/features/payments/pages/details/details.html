@@ -1,57 +1,65 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold">Payment Details</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold">
+      {{ 'PAYMENT_DETAILS.TITLE' | translate }}
+    </h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/payments">payments</a></li>
-        <li class="breadcrumb-item active">Details</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/payments">{{ 'PAYMENT_DETAILS.BREADCRUMB.PAYMENTS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'PAYMENT_DETAILS.BREADCRUMB.DETAILS' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
 </div>
 
 <form class="row justify-content-center" [formGroup]="form" (ngSubmit)="save()">
-
   <div class="col-lg-6">
 
     <div class="mb-3">
-      <label>Payment Method</label>
+      <label>{{ 'PAYMENT_DETAILS.FIELDS.METHOD' | translate }}</label>
       <select class="form-select" formControlName="method">
-        <option value="">Select</option>
-        <option value="card">Credit / Debit Card</option>
-        <option value="paypal">PayPal</option>
-        <option value="cash">Cash</option>
+        <option value="">{{ 'PAYMENT_DETAILS.SELECT' | translate }}</option>
+        <option value="card">{{ 'PAYMENT_DETAILS.METHODS.CARD' | translate }}</option>
+        <option value="paypal">{{ 'PAYMENT_DETAILS.METHODS.PAYPAL' | translate }}</option>
+        <option value="cash">{{ 'PAYMENT_DETAILS.METHODS.CASH' | translate }}</option>
       </select>
     </div>
 
     @if (form.value.method === 'card') {
       <div class="mb-3">
-        <label>Name on Card</label>
+        <label>{{ 'PAYMENT_DETAILS.FIELDS.CARD_NAME' | translate }}</label>
         <input class="form-control" formControlName="cardName">
       </div>
 
       <div class="mb-3">
-        <label>Card Number</label>
+        <label>{{ 'PAYMENT_DETAILS.FIELDS.CARD_NUMBER' | translate }}</label>
         <input class="form-control" formControlName="cardNumber">
       </div>
 
       <div class="row">
         <div class="col">
-          <label>Expiry</label>
+          <label>{{ 'PAYMENT_DETAILS.FIELDS.EXPIRY' | translate }}</label>
           <input type="month" class="form-control" formControlName="expiry">
         </div>
         <div class="col">
-          <label>CVV</label>
+          <label>{{ 'PAYMENT_DETAILS.FIELDS.CVV' | translate }}</label>
           <input type="password" class="form-control" formControlName="cvv">
         </div>
       </div>
     }
 
     <div class="mt-3">
-      <label>Billing Address</label>
+      <label>{{ 'PAYMENT_DETAILS.FIELDS.BILLING_ADDRESS' | translate }}</label>
       <textarea class="form-control" rows="3" formControlName="billingAddress"></textarea>
     </div>
-    <button class="btn btn-primary w-100 mt-3" type="submit">Save</button>
+
+    <button class="btn btn-primary w-100 mt-3" type="submit">
+      {{ 'COMMON.SAVE' | translate }}
+    </button>
+
   </div>
-    
 </form>

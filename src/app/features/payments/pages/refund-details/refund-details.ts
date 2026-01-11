@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-refund-details',
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule,RouterModule,TranslateModule],
   templateUrl: './refund-details.html',
   styleUrl: './refund-details.css',
 })
@@ -20,6 +21,17 @@ export class RefundDetails {
     status: 'Pending',
     requestedAt: '2025-12-13'
   };
+  isRtl = false;
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit() {
+    this.setDir(this.translate.currentLang);
+    this.translate.onLangChange.subscribe(e => this.setDir(e.lang));
+  }
+
+  setDir(lang: string) {
+    this.isRtl = lang === 'ar';
+  }
 
   approveRefund() {
     this.refund.status = 'Approved';

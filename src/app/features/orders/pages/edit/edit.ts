@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule,TranslateModule],
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })
@@ -15,16 +16,23 @@ export class OrderEdit implements OnInit {
   form!: FormGroup;
   orderId!: string;
   loading = true;
+  isRtl = false;
 
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {
     this.orderId = this.route.snapshot.paramMap.get('id') || '1';
     this.initForm();
+    this.setDir(this.translate.currentLang);
+    this.translate.onLangChange.subscribe(e => this.setDir(e.lang));
+  }
+  setDir(lang: string) {
+    this.isRtl = lang === 'ar';
   }
 
   initForm() {

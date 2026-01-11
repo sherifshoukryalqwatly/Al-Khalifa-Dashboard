@@ -156,7 +156,16 @@
   },
   "COMMON": {
     "ACTIONS": "Actions",
-    "FILTER": "Filter"
+    "FILTER": "Filter",
+    "CANCEL": "Cancle",
+    "CURRENCY": "EGP",
+    "VIEW":"View",
+    "BACK":"Back",
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "EDIT": "Edit",
+    "SAVE": "Save",
+    "SAVE_CHANGES": "Save Changes"
   },
   "INVENTORY": {
     "TITLE": "Inventory",
@@ -278,6 +287,700 @@
     "ROLE": "Role",
     "PHONE": "Phone",
     "JOINED": "Joined",
-    "STATUS": "Status"
+    "STATUS": "Status",
+    "EDIT": {
+      "TITLE": "Edit Profile"
+    },
+    "BREADCRUMB": {
+      "PROFILE": "Profile",
+      "EDIT": "Edit Profile"
+    },
+    "FIELDS": {
+      "FULL_NAME": "Full Name",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "AVATAR": "Avatar URL"
+    },
+    "PASSWORD": {
+      "TITLE": "Change Password",
+      "BREADCRUMB": "Change Password",
+      "CURRENT": "Current Password",
+      "NEW": "New Password",
+      "CONFIRM": "Confirm New Password",
+      "UPDATE": "Update Password"
+    }
+  },
+  "usersAnalytics": {
+    "title": "Users Analytics",
+    "breadcrumb": {
+      "analytics": "Analytics",
+      "usersAnalytics": "Users Analytics"
+    },
+    "stats": {
+      "total": "Total Users",
+      "active": "Active Users",
+      "new": "New This Month",
+      "blocked": "Blocked Users"
+    },
+    "charts": {
+      "growth": "User Growth",
+      "linePlaceholder": "Line Chart Placeholder",
+      "status": "User Status",
+      "doughnutPlaceholder": "Doughnut Chart Placeholder"
+    },
+    "recent": {
+      "title": "Recent User Activity"
+    },
+    "table": {
+      "user": "User",
+      "email": "Email",
+      "status": "Status",
+      "joined": "Joined"
+    },
+    "status": {
+      "active": "Active",
+      "pending": "Pending"
+    },
+    "joined": {
+      "daysAgo": "2 days ago",
+      "weekAgo": "1 week ago"
+    }
+  },
+  "productsAnalytics": {
+    "title": "Products Analytics",
+    "breadcrumb": {
+      "analytics": "Analytics",
+      "productsAnalytics": "Products Analytics"
+    },
+    "stats": {
+      "total": "Total Products",
+      "active": "Active Products",
+      "out": "Out of Stock",
+      "archived": "Archived"
+    },
+    "charts": {
+      "growth": "Product Growth",
+      "linePlaceholder": "Line Chart Placeholder",
+      "stock": "Stock Status",
+      "doughnutPlaceholder": "Doughnut Chart Placeholder"
+    },
+    "top": {
+      "title": "Top Selling Products"
+    },
+    "table": {
+      "product": "Product",
+      "category": "Category",
+      "sales": "Sales",
+      "revenue": "Revenue",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "lowStock": "Low Stock"
+    },
+    "category": {
+      "electronics": "Electronics",
+      "fashion": "Fashion"
+    }
+  },
+  "salesAnalytics": {
+    "title": "Sales Analytics",
+    "breadcrumb": {
+      "analytics": "Analytics",
+      "salesAnalytics": "Sales Analytics"
+    },
+    "range": {
+      "today": "Today",
+      "last7": "Last 7 Days",
+      "last30": "Last 30 Days",
+      "year": "This Year"
+    },
+    "stats": {
+      "revenue": "Total Revenue",
+      "orders": "Orders",
+      "avg": "Avg Order Value",
+      "refunds": "Refunds"
+    },
+    "charts": {
+      "revenue": "Revenue Over Time",
+      "linePlaceholder": "Line Chart Placeholder",
+      "methods": "Payment Methods",
+      "piePlaceholder": "Pie Chart Placeholder"
+    },
+    "breakdown": {
+      "title": "Sales Breakdown"
+    },
+    "table": {
+      "date": "Date",
+      "orders": "Orders",
+      "revenue": "Revenue",
+      "refunds": "Refunds",
+      "net": "Net"
+    }
+  },
+  "addProduct": {
+    "title": "Add Product",
+    "breadcrumb": {
+      "products": "Products",
+      "add": "Add"
+    },
+    "info": {
+      "title": "Product Information",
+      "name": "Product Name",
+      "description": "Description",
+      "category": "Category",
+      "brand": "Brand"
+    },
+    "pricing": {
+      "title": "Pricing",
+      "price": "Price",
+      "discount": "Discount",
+      "final": "Final Price"
+    },
+    "image": {
+      "title": "Product Image",
+      "uploadText": "Upload product image"
+    },
+    "publish": {
+      "title": "Publish",
+      "active": "Active"
+    },
+    "actions": {
+      "save": "Save Product",
+      "cancel": "Cancel"
+    },
+    "placeholders": {
+      "name": "iPhone 15 Pro",
+      "description": "Product description...",
+      "brand": "Apple",
+      "price": "1000",
+      "discount": "10%",
+      "final": "900"
+    },
+    "select": {
+      "category": "Select category"
+    },
+    "category": {
+      "electronics": "Electronics",
+      "clothing": "Clothing"
+    }
+  },
+  "PRODUCT": {
+    "DETAILS": {
+      "TITLE": "Product Details"
+    },
+    "BREADCRUMB": {
+      "PRODUCTS": "Products",
+      "DETAILS": "Details"
+    },
+    "ACTION": {
+      "EDIT": "Edit",
+      "DELETE": "Delete"
+    },
+    "STATS": {
+      "SALES": "Sales",
+      "VIEWS": "Views",
+      "REVIEWS": "Reviews",
+      "RATING": "Rating",
+      "ORDERS": "Orders",
+      "REVENUE": "Revenue"
+    },
+    "LABEL": {
+      "CATEGORY": "Category",
+      "BRAND": "Brand",
+      "STOCK": "Stock",
+      "AVAILABLE": "Available",
+      "SKU": "SKU"
+    },
+    "TABS": {
+      "DESCRIPTION": "Description",
+      "SPECIFICATIONS": "Specifications",
+      "REVIEWS": "Reviews"
+    }
+  },
+  "editProduct": {
+    "TITLE": "Edit Product",
+    "BREADCRUMB": {
+      "PRODUCTS": "Products",
+      "EDIT": "Edit"
+    },
+    "STATUS": {
+      "DRAFT": "Draft"
+    },
+    "SECTION": {
+      "INFO": "Product Information",
+      "PRICING": "Pricing",
+      "IMAGES": "Product Images",
+      "PUBLISH": "Publish"
+    },
+    "FIELD": {
+      "NAME": "Product Name",
+      "DESCRIPTION": "Description",
+      "CATEGORY": "Category",
+      "BRAND": "Brand",
+      "PRICE": "Price",
+      "DISCOUNT": "Discount (%)",
+      "FINAL_PRICE": "Final Price",
+      "ACTIVE": "Active"
+    },
+    "ACTION": {
+      "UPDATE": "Update Product",
+      "CANCEL": "Cancel"
+    },
+    "EMPTY": {
+      "IMAGES": "No images uploaded"
+    }
+  },
+  "ADD_USER": {
+    "TITLE": "Add User",
+    "BREADCRUMB": {
+      "USERS": "Users",
+      "ADD": "Add"
+    },
+    "FORM": {
+      "NAME": "Full Name",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "ROLE": "Role",
+      "PASSWORD": "Password",
+      "ACTIVE": "Active"
+    },
+    "ROLES": {
+      "USER": "User",
+      "ADMIN": "Admin",
+      "MANAGER": "Manager"
+    },
+    "ACTION": {
+      "SAVE": "Save User",
+      "CANCEL": "Cancel"
+    }
+  },
+  "USER_DETAILS": {
+    "TITLE": "User Details",
+    "BREADCRUMB": {
+      "USERS": "Users",
+      "DETAILS": "Details"
+    },
+    "ACTION": {
+      "EDIT": "Edit User",
+      "BACK": "Back"
+    },
+    "STATUS": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    },
+    "SECTION": {
+      "INFO": "User Information"
+    },
+    "FIELD": {
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "ROLE": "Role",
+      "CREATED_AT": "Created At",
+      "LAST_LOGIN": "Last Login"
+    }
+  },
+  "EDIT_USER": {
+    "TITLE": "Edit User",
+    "BREADCRUMB": {
+      "USERS": "Users",
+      "EDIT": "Edit"
+    },
+    "FIELD": {
+      "NAME": "Full Name",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "ROLE": "Role",
+      "ACTIVE": "Active"
+    },
+    "ACTION": {
+      "UPDATE": "Update User",
+      "CANCEL": "Cancel"
+    }
+  },
+  "ADD_CATEGORY": {
+    "TITLE": "Add Category",
+    "BREADCRUMB": {
+      "CATEGORIES": "Categories",
+      "ADD": "Add"
+    },
+    "FIELD": {
+      "NAME": "Category Name",
+      "DESCRIPTION": "Description",
+      "ACTIVE": "Active"
+    },
+    "ACTION": {
+      "SAVE": "Save Category",
+      "CANCEL": "Cancel"
+    }
+  },
+  "EDIT_CATEGORY": {
+    "TITLE": "Edit Category",
+    "BREADCRUMB": {
+      "CATEGORIES": "Categories",
+      "EDIT": "Edit"
+    },
+    "FIELD": {
+      "NAME": "Category Name",
+      "DESCRIPTION": "Description",
+      "ACTIVE": "Active"
+    },
+    "ACTION": {
+      "UPDATE": "Update Category",
+      "CANCEL": "Cancel"
+    }
+  },
+  "PENDING_ORDERS": {
+    "TITLE": "Pending Orders",
+    "BREADCRUMB": {
+      "ORDERS": "Orders",
+      "PENDING": "Pending"
+    },
+    "TABLE": {
+      "ORDER_ID": "Order ID",
+      "CUSTOMER": "Customer",
+      "DATE": "Date",
+      "TOTAL": "Total",
+      "STATUS": "Status",
+      "ACTIONS": "Actions"
+    },
+    "ACTION": {
+      "VIEW": "View"
+    },
+    "CURRENCY": "EGP"
+  },
+  "ORDER_DETAILS": {
+    "TITLE": "Order Details",
+    "BREADCRUMB": {
+      "ORDERS": "Orders",
+      "DETAILS": "Details"
+    },
+    "SECTIONS": {
+      "CUSTOMER": "Customer",
+      "ITEMS": "Order Items"
+    },
+    "INFO": {
+      "ORDER_ID": "Order ID",
+      "DATE": "Date",
+      "PAYMENT": "Payment"
+    },
+    "TABLE": {
+      "PRODUCT": "Product",
+      "PRICE": "Price",
+      "QTY": "Qty",
+      "TOTAL": "Total"
+    },
+    "SUBTOTAL": "Subtotal",
+    "ACTION": {
+      "BACK": "Back to Orders"
+    }
+  },
+  "ORDER_STATUS": {
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "processing": "Processing",
+    "shipped": "Shipped"
+  },
+  "CURRENCY": {
+    "EGP": "EGP"
+  },
+  "ORDER_EDIT": {
+    "TITLE": "Order Edit",
+    "HEADER": "Edit Order",
+    "BREADCRUMB": {
+      "ORDERS": "Orders",
+      "EDIT": "Edit"
+    },
+    "FIELDS": {
+      "STATUS": "Status",
+      "PAYMENT": "Payment Method"
+    },
+    "SECTIONS": {
+      "ITEMS": "Items"
+    },
+    "TABLE": {
+      "PRODUCT": "Product",
+      "PRICE": "Price",
+      "QTY": "Qty",
+      "TOTAL": "Total"
+    },
+    "SUBTOTAL": "Subtotal",
+    "ACTION": {
+      "SAVE": "Save Changes"
+    }
+  },
+  "COUPON_ADD": {
+    "TITLE": "Add Coupon",
+    "BREADCRUMB": {
+      "COUPONS": "Coupons",
+      "ADD": "Add"
+    },
+    "FIELDS": {
+      "CODE": "Coupon Code",
+      "DISCOUNT": "Discount",
+      "TYPE": "Discount Type",
+      "EXPIRY": "Expiry Date",
+      "ACTIVE": "Active"
+    },
+    "TYPE": {
+      "PERCENTAGE": "Percentage (%)",
+      "FIXED": "Fixed Amount"
+    },
+    "ACTION": {
+      "SAVE": "Save Coupon"
+    }
+  },
+   "COUPON_EDIT": {
+    "TITLE": "Edit Coupon",
+    "BREADCRUMB": {
+      "COUPONS": "Coupons",
+      "EDIT": "Edit"
+    },
+    "FIELDS": {
+      "CODE": "Coupon Code",
+      "DISCOUNT": "Discount",
+      "TYPE": "Discount Type",
+      "EXPIRY": "Expiry Date",
+      "ACTIVE": "Active"
+    },
+    "TYPE": {
+      "PERCENTAGE": "Percentage (%)",
+      "FIXED": "Fixed Amount"
+    },
+    "ACTION": {
+      "UPDATE": "Update Coupon"
+    }
+  },
+  "INVENTORY_ADD": {
+    "TITLE": "Add Inventory",
+    "BREADCRUMB": {
+      "INVENTORY": "Inventory",
+      "ADD": "Add"
+    },
+    "FIELDS": {
+      "PRODUCT_NAME": "Product Name",
+      "SKU": "SKU",
+      "QUANTITY": "Quantity",
+      "LOW_STOCK": "Low Stock Alert",
+      "LOCATION": "Warehouse Location",
+      "ACTIVE": "In Stock"
+    },
+    "LOCATION": {
+      "MAIN": "Main Warehouse",
+      "STORE": "Store Front",
+      "SECONDARY": "Secondary Warehouse"
+    },
+    "ACTION": {
+      "SAVE": "Save Inventory"
+    }
+  },
+  "INVENTORY_EDIT": {
+    "TITLE": "Edit Inventory",
+    "BREADCRUMB": {
+      "INVENTORY": "Inventory",
+      "EDIT": "Edit"
+    },
+    "FIELDS": {
+      "PRODUCT_NAME": "Product Name",
+      "SKU": "SKU",
+      "QUANTITY": "Quantity",
+      "LOW_STOCK": "Low Stock Alert",
+      "LOCATION": "Warehouse Location",
+      "ACTIVE": "In Stock"
+    },
+    "LOCATION": {
+      "MAIN": "Main Warehouse",
+      "STORE": "Store Front",
+      "SECONDARY": "Secondary Warehouse"
+    },
+    "ACTION": {
+      "UPDATE": "Update Inventory"
+    }
+  },
+  "REFUNDS": {
+    "TITLE": "Refund Requests",
+    "BREADCRUMB": {
+      "PAYMENTS": "Payments",
+      "REFUNDS": "Refunds"
+    },
+    "TABLE": {
+      "REFUND_ID": "Refund ID",
+      "ORDER_ID": "Order ID",
+      "CUSTOMER": "Customer",
+      "AMOUNT": "Amount",
+      "REASON": "Reason",
+      "STATUS": "Status",
+      "DATE": "Date",
+      "ACTIONS": "Actions"
+    },
+    "STATUS": {
+      "PENDING": "Pending",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected"
+    }
+  },
+  "REFUND_DETAILS": {
+    "TITLE": "Refund Details",
+    "BREADCRUMB": {
+      "PAYMENTS": "Payments",
+      "REFUNDS": "Refunds",
+      "DETAILS": "Details"
+    },
+    "FIELDS": {
+      "REFUND_ID": "Refund ID",
+      "ORDER_ID": "Order ID",
+      "CUSTOMER": "Customer",
+      "EMAIL": "Email",
+      "PAYMENT": "Payment Method",
+      "AMOUNT": "Amount",
+      "REQUESTED_AT": "Requested At",
+      "REASON": "Reason"
+    },
+    "ACTIONS": {
+      "TITLE": "Actions",
+      "APPROVE": "Approve Refund",
+      "REJECT": "Reject Refund"
+    }
+  },
+  "PAYMENT_DETAILS": {
+    "TITLE": "Payment Details",
+    "SELECT": "Select",
+    "BREADCRUMB": {
+      "PAYMENTS": "Payments",
+      "DETAILS": "Details"
+    },
+    "FIELDS": {
+      "METHOD": "Payment Method",
+      "CARD_NAME": "Name on Card",
+      "CARD_NUMBER": "Card Number",
+      "EXPIRY": "Expiry",
+      "CVV": "CVV",
+      "BILLING_ADDRESS": "Billing Address"
+    },
+    "METHODS": {
+      "CARD": "Credit / Debit Card",
+      "PAYPAL": "PayPal",
+      "CASH": "Cash"
+    }
+  },
+  "REPORTED_REVIEWS": {
+    "TITLE": "Reported Reviews",
+    "BREADCRUMB": {
+      "REVIEWS": "Reviews",
+      "REPORTED": "Reported Reviews"
+    },
+    "TABLE": {
+      "REPORT_ID": "Report ID",
+      "PRODUCT": "Product",
+      "REVIEWER": "Reviewer",
+      "RATING": "Rating",
+      "REASON": "Reason",
+      "STATUS": "Status",
+      "DATE": "Date",
+      "ACTIONS": "Actions"
+    },
+    "ACTIONS": {
+      "REVIEW": "Review"
+    }
+  },
+  "Pending": "Pending",
+  "Resolved": "Resolved",
+  "SHIPPING_ZONES": {
+    "TITLE": "Shipping Zones",
+    "BREADCRUMB": {
+      "SHIPPING": "Shipping",
+      "ZONES": "Shipping Zones"
+    },
+    "TABLE": {
+      "NAME": "Zone Name",
+      "FEE": "Shipping Fee",
+      "DELIVERY": "Delivery Time",
+      "STATUS": "Status",
+      "ACTIONS": "Actions"
+    },
+    "ACTIONS": {
+      "ADD": "Add Zone"
+    }
+  },
+  "SHIPPING_EDIT": {
+    "TITLE": "Edit Shipping",
+    "BREADCRUMB": {
+      "SHIPPING": "Shipping",
+      "EDIT": "Edit"
+    },
+    "ACTIONS": {
+      "ADD_ZONE": "Add Zone"
+    },
+    "FIELDS": {
+      "FULL_NAME": "Full Name",
+      "PHONE": "Phone",
+      "ADDRESS1": "Address Line 1",
+      "ADDRESS2": "Address Line 2",
+      "CITY": "City",
+      "STATE": "State",
+      "POSTAL": "Postal Code",
+      "COUNTRY": "Country",
+      "NOTES": "Delivery Notes"
+    }
+  },
+  "SHIPPING_ZONE_ADD": {
+    "TITLE": "Add Shipping Zone",
+    "BREADCRUMB": {
+      "SHIPPING": "Shipping",
+      "ZONES": "Shipping Zones",
+      "ADD": "Add"
+    },
+    "FIELDS": {
+      "NAME": "Zone Name",
+      "FEE": "Shipping Fee (EGP)",
+      "DELIVERY": "Delivery Time",
+      "ACTIVE": "Active"
+    }
+  },
+  "EMAIL_SETTINGS": {
+    "TITLE": "Email Settings",
+    "BREADCRUMB": {
+      "GENERAL": "General",
+      "EMAIL": "Email Settings"
+    },
+    "FIELDS": {
+      "DRIVER": "Mail Driver",
+      "HOST": "Mail Host",
+      "PORT": "Mail Port",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "ENCRYPTION": "Encryption",
+      "FROM_ADDRESS": "From Address",
+      "FROM_NAME": "From Name"
+    }
+  },
+  "PAYMENT_SETTINGS": {
+    "TITLE": "Payment Settings",
+    "BREADCRUMB": {
+      "GENERAL": "General",
+      "PAYMENT": "Payment Settings"
+    },
+    "FIELDS": {
+      "DEFAULT_GATEWAY": "Default Payment Gateway",
+      "STRIPE_KEY": "Stripe API Key",
+      "PAYPAL_CLIENT": "PayPal Client ID",
+      "PAYPAL_SECRET": "PayPal Secret",
+      "PAYMOB_KEY": "Paymob API Key"
+    }
+  },
+  "STORE_SETTINGS": {
+    "TITLE": "Store Settings",
+    "BREADCRUMB": {
+      "GENERAL": "General",
+      "STORE": "Store Settings"
+    },
+    "FIELDS": {
+      "NAME": "Store Name",
+      "EMAIL": "Store Email",
+      "PHONE": "Store Phone",
+      "ADDRESS": "Store Address",
+      "CURRENCY": "Currency"
+    }
   }
 }

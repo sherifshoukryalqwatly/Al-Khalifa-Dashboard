@@ -1,16 +1,22 @@
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
   <div>
-    <h4 class="fw-bold mb-1">Order Details</h4>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/orders">Orders</a></li>
-        <li class="breadcrumb-item active">Details</li>
+    <h4 class="fw-bold mb-1">
+      {{ 'ORDER_DETAILS.TITLE' | translate }}
+    </h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a routerLink="/orders">{{ 'ORDER_DETAILS.BREADCRUMB.ORDERS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'ORDER_DETAILS.BREADCRUMB.DETAILS' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
 
   <span class="badge bg-warning text-dark fs-6">
-    {{ order.status }}
+    {{ ('ORDER_STATUS.' + order.status) | translate }}
   </span>
 </div>
 
@@ -19,7 +25,9 @@
   <div class="col-lg-4 mb-4">
     <div class="card shadow-sm border-0">
       <div class="card-body">
-        <h6 class="fw-bold mb-3">Customer</h6>
+        <h6 class="fw-bold mb-3">
+          {{ 'ORDER_DETAILS.SECTIONS.CUSTOMER' | translate }}
+        </h6>
 
         <p class="mb-1 fw-semibold">{{ order.customer.name }}</p>
         <p class="mb-1">{{ order.customer.email }}</p>
@@ -35,17 +43,23 @@
       <div class="card-body">
 
         <div class="row mb-2">
-          <div class="col-sm-4 fw-semibold">Order ID</div>
+          <div class="col-sm-4 fw-semibold">
+            {{ 'ORDER_DETAILS.INFO.ORDER_ID' | translate }}
+          </div>
           <div class="col-sm-8">{{ order.id }}</div>
         </div>
 
         <div class="row mb-2">
-          <div class="col-sm-4 fw-semibold">Date</div>
+          <div class="col-sm-4 fw-semibold">
+            {{ 'ORDER_DETAILS.INFO.DATE' | translate }}
+          </div>
           <div class="col-sm-8">{{ order.createdAt }}</div>
         </div>
 
         <div class="row mb-2">
-          <div class="col-sm-4 fw-semibold">Payment</div>
+          <div class="col-sm-4 fw-semibold">
+            {{ 'ORDER_DETAILS.INFO.PAYMENT' | translate }}
+          </div>
           <div class="col-sm-8">{{ order.paymentMethod }}</div>
         </div>
 
@@ -57,25 +71,27 @@
 <!-- Items -->
 <div class="card shadow-sm border-0 mb-4">
   <div class="card-body">
-    <h6 class="fw-bold mb-3">Order Items</h6>
+    <h6 class="fw-bold mb-3">
+      {{ 'ORDER_DETAILS.SECTIONS.ITEMS' | translate }}
+    </h6>
 
     <div class="table-responsive">
       <table class="table align-middle">
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th class="text-center">Qty</th>
-            <th class="text-end">Total</th>
+            <th>{{ 'ORDER_DETAILS.TABLE.PRODUCT' | translate }}</th>
+            <th>{{ 'ORDER_DETAILS.TABLE.PRICE' | translate }}</th>
+            <th class="text-center">{{ 'ORDER_DETAILS.TABLE.QTY' | translate }}</th>
+            <th class="text-end">{{ 'ORDER_DETAILS.TABLE.TOTAL' | translate }}</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of order.items">
             <td>{{ item.name }}</td>
-            <td>{{ item.price }} EGP</td>
+            <td>{{ item.price }} {{ 'CURRENCY.EGP' | translate }}</td>
             <td class="text-center">{{ item.quantity }}</td>
             <td class="text-end">
-              {{ item.price * item.quantity }} EGP
+              {{ item.price * item.quantity }} {{ 'CURRENCY.EGP' | translate }}
             </td>
           </tr>
         </tbody>
@@ -83,11 +99,12 @@
     </div>
 
     <div class="text-end fw-bold">
-      Subtotal: {{ subtotal }} EGP
+      {{ 'ORDER_DETAILS.SUBTOTAL' | translate }}: {{ subtotal }} {{ 'CURRENCY.EGP' | translate }}
     </div>
   </div>
 </div>
 
 <a routerLink="/orders" class="btn btn-outline-secondary">
-  <i class="bi bi-arrow-left me-1"></i> Back to Orders
+  <i class="bi bi-arrow-left me-1"></i>
+  {{ 'ORDER_DETAILS.ACTION.BACK' | translate }}
 </a>

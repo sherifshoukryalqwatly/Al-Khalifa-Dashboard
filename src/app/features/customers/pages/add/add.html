@@ -1,10 +1,14 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Add User</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">{{ 'ADD_USER.TITLE' | translate }}</h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/customers">Users</a></li>
-        <li class="breadcrumb-item active">Add</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/customers">{{ 'ADD_USER.BREADCRUMB.USERS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'ADD_USER.BREADCRUMB.ADD' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
@@ -16,88 +20,50 @@
     <div class="card shadow-sm border-0">
       <div class="card-body">
 
-        <!-- Name -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Full Name</label>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="user.name"
-            name="name"
-            required
-          />
+          <label class="form-label fw-semibold">{{ 'ADD_USER.FORM.NAME' | translate }}</label>
+          <input type="text" class="form-control" [(ngModel)]="user.name" name="name" required />
         </div>
 
-        <!-- Email -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            [(ngModel)]="user.email"
-            name="email"
-            required
-          />
+          <label class="form-label fw-semibold">{{ 'ADD_USER.FORM.EMAIL' | translate }}</label>
+          <input type="email" class="form-control" [(ngModel)]="user.email" name="email" required />
         </div>
 
-        <!-- Phone -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Phone</label>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="user.phone"
-            name="phone"
-          />
+          <label class="form-label fw-semibold">{{ 'ADD_USER.FORM.PHONE' | translate }}</label>
+          <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone" />
         </div>
 
-        <!-- Role -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Role</label>
-          <select
-            class="form-select"
-            [(ngModel)]="user.role"
-            name="role"
-          >
-            <option>User</option>
-            <option>Admin</option>
-            <option>Manager</option>
+          <label class="form-label fw-semibold">{{ 'ADD_USER.FORM.ROLE' | translate }}</label>
+          <select class="form-select" [(ngModel)]="user.role" name="role">
+            <option value="User">{{ 'ADD_USER.ROLES.USER' | translate }}</option>
+            <option value="Admin">{{ 'ADD_USER.ROLES.ADMIN' | translate }}</option>
+            <option value="Manager">{{ 'ADD_USER.ROLES.MANAGER' | translate }}</option>
           </select>
         </div>
 
-        <!-- Password -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            [(ngModel)]="user.password"
-            name="password"
-            required
-          />
+          <label class="form-label fw-semibold">{{ 'ADD_USER.FORM.PASSWORD' | translate }}</label>
+          <input type="password" class="form-control" [(ngModel)]="user.password" name="password" required />
         </div>
 
-        <!-- Status -->
         <div class="form-check mb-4">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            [(ngModel)]="user.active"
-            name="active"
-          />
-          <label class="form-check-label">Active</label>
+          <input class="form-check-input" type="checkbox" [(ngModel)]="user.active" name="active" />
+          <label class="form-check-label">{{ 'ADD_USER.FORM.ACTIVE' | translate }}</label>
         </div>
 
         <button
           type="submit"
           class="btn btn-primary w-100 mb-2"
-          [disabled]="!user.name || !user.email || !user.password"
-        >
-          <i class="bi bi-check-circle me-1"></i> Save User
+          [disabled]="!user.name || !user.email || !user.password">
+          <i class="bi bi-check-circle me-1"></i>
+          {{ 'ADD_USER.ACTION.SAVE' | translate }}
         </button>
 
         <a routerLink="/users" class="btn btn-outline-secondary w-100">
-          Cancel
+          {{ 'ADD_USER.ACTION.CANCEL' | translate }}
         </a>
 
       </div>

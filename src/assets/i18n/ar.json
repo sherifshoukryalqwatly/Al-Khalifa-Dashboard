@@ -156,7 +156,16 @@
   },
   "COMMON": {
     "ACTIONS": "الإجراءات",
-    "FILTER": "تصفية"
+    "FILTER": "تصفية",
+    "CANCEL": "الغاء",
+    "CURRENCY": "ج.م",
+    "VIEW":"أعرض",
+    "BACK":"أخرج",
+    "ACTIVE": "نشط",
+    "INACTIVE": "غير نشط",
+    "EDIT": "تعديل",
+    "SAVE": "حفظ",
+    "SAVE_CHANGES": "حفظ التغييرات"
   },
   "INVENTORY": {
     "TITLE": "المخزون",
@@ -278,6 +287,700 @@
     "ROLE": "الدور",
     "PHONE": "رقم الهاتف",
     "JOINED": "انضم منذ",
-    "STATUS": "الحالة"
+    "STATUS": "الحالة",
+    "EDIT": {
+      "TITLE": "تعديل الملف الشخصي"
+    },
+    "BREADCRUMB": {
+      "PROFILE": "الملف الشخصي",
+      "EDIT": "تعديل الملف الشخصي"
+    },
+    "FIELDS": {
+      "FULL_NAME": "الاسم الكامل",
+      "EMAIL": "البريد الإلكتروني",
+      "PHONE": "رقم الهاتف",
+      "AVATAR": "رابط الصورة الشخصية"
+    },
+    "PASSWORD": {
+      "TITLE": "تغيير كلمة المرور",
+      "BREADCRUMB": "تغيير كلمة المرور",
+      "CURRENT": "كلمة المرور الحالية",
+      "NEW": "كلمة المرور الجديدة",
+      "CONFIRM": "تأكيد كلمة المرور الجديدة",
+      "UPDATE": "تحديث كلمة المرور"
+    }
+  },
+  "usersAnalytics": {
+    "title": "تحليلات المستخدمين",
+    "breadcrumb": {
+      "analytics": "التحليلات",
+      "usersAnalytics": "تحليلات المستخدمين"
+    },
+    "stats": {
+      "total": "إجمالي المستخدمين",
+      "active": "المستخدمون النشطون",
+      "new": "الجدد هذا الشهر",
+      "blocked": "المستخدمون المحظورون"
+    },
+    "charts": {
+      "growth": "نمو المستخدمين",
+      "linePlaceholder": "مخطط خطي (قريباً)",
+      "status": "حالة المستخدمين",
+      "doughnutPlaceholder": "مخطط دائري (قريباً)"
+    },
+    "recent": {
+      "title": "أحدث نشاط للمستخدمين"
+    },
+    "table": {
+      "user": "المستخدم",
+      "email": "البريد الإلكتروني",
+      "status": "الحالة",
+      "joined": "تاريخ الانضمام"
+    },
+    "status": {
+      "active": "نشط",
+      "pending": "قيد الانتظار"
+    },
+    "joined": {
+      "daysAgo": "منذ يومين",
+      "weekAgo": "منذ أسبوع"
+    }
+  },
+   "productsAnalytics": {
+    "title": "تحليلات المنتجات",
+    "breadcrumb": {
+      "analytics": "التحليلات",
+      "productsAnalytics": "تحليلات المنتجات"
+    },
+    "stats": {
+      "total": "إجمالي المنتجات",
+      "active": "المنتجات النشطة",
+      "out": "غير متوفر بالمخزون",
+      "archived": "مؤرشف"
+    },
+    "charts": {
+      "growth": "نمو المنتجات",
+      "linePlaceholder": "مخطط خطي (قريباً)",
+      "stock": "حالة المخزون",
+      "doughnutPlaceholder": "مخطط دائري (قريباً)"
+    },
+    "top": {
+      "title": "المنتجات الأكثر مبيعاً"
+    },
+    "table": {
+      "product": "المنتج",
+      "category": "الفئة",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "status": "الحالة"
+    },
+    "status": {
+      "active": "نشط",
+      "lowStock": "مخزون منخفض"
+    },
+    "category": {
+      "electronics": "إلكترونيات",
+      "fashion": "أزياء"
+    }
+  },
+  "salesAnalytics": {
+    "title": "تحليلات المبيعات",
+    "breadcrumb": {
+      "analytics": "التحليلات",
+      "salesAnalytics": "تحليلات المبيعات"
+    },
+    "range": {
+      "today": "اليوم",
+      "last7": "آخر 7 أيام",
+      "last30": "آخر 30 يوم",
+      "year": "هذا العام"
+    },
+    "stats": {
+      "revenue": "إجمالي الإيرادات",
+      "orders": "الطلبات",
+      "avg": "متوسط قيمة الطلب",
+      "refunds": "المرتجعات"
+    },
+    "charts": {
+      "revenue": "الإيرادات عبر الزمن",
+      "linePlaceholder": "مخطط خطي (قريباً)",
+      "methods": "طرق الدفع",
+      "piePlaceholder": "مخطط دائري (قريباً)"
+    },
+    "breakdown": {
+      "title": "تفصيل المبيعات"
+    },
+    "table": {
+      "date": "التاريخ",
+      "orders": "الطلبات",
+      "revenue": "الإيرادات",
+      "refunds": "المرتجعات",
+      "net": "الصافي"
+    }
+  },
+  "addProduct": {
+    "title": "إضافة منتج",
+    "breadcrumb": {
+      "products": "المنتجات",
+      "add": "إضافة"
+    },
+    "info": {
+      "title": "معلومات المنتج",
+      "name": "اسم المنتج",
+      "description": "الوصف",
+      "category": "الفئة",
+      "brand": "العلامة التجارية"
+    },
+    "pricing": {
+      "title": "التسعير",
+      "price": "السعر",
+      "discount": "الخصم",
+      "final": "السعر النهائي"
+    },
+    "image": {
+      "title": "صورة المنتج",
+      "uploadText": "رفع صورة المنتج"
+    },
+    "publish": {
+      "title": "النشر",
+      "active": "نشط"
+    },
+    "actions": {
+      "save": "حفظ المنتج",
+      "cancel": "إلغاء"
+    },
+    "placeholders": {
+      "name": "آيفون 15 برو",
+      "description": "وصف المنتج...",
+      "brand": "أبل",
+      "price": "1000",
+      "discount": "10%",
+      "final": "900"
+    },
+    "select": {
+      "category": "اختر الفئة"
+    },
+    "category": {
+      "electronics": "إلكترونيات",
+      "clothing": "ملابس"
+    }
+  },
+  "PRODUCT": {
+    "DETAILS": {
+      "TITLE": "تفاصيل المنتج"
+    },
+    "BREADCRUMB": {
+      "PRODUCTS": "المنتجات",
+      "DETAILS": "التفاصيل"
+    },
+    "ACTION": {
+      "EDIT": "تعديل",
+      "DELETE": "حذف"
+    },
+    "STATS": {
+      "SALES": "المبيعات",
+      "VIEWS": "المشاهدات",
+      "REVIEWS": "المراجعات",
+      "RATING": "التقييم",
+      "ORDERS": "الطلبات",
+      "REVENUE": "الإيرادات"
+    },
+    "LABEL": {
+      "CATEGORY": "الفئة",
+      "BRAND": "العلامة التجارية",
+      "STOCK": "المخزون",
+      "AVAILABLE": "متاح",
+      "SKU": "رمز المنتج"
+    },
+    "TABS": {
+      "DESCRIPTION": "الوصف",
+      "SPECIFICATIONS": "المواصفات",
+      "REVIEWS": "المراجعات"
+    }
+  },
+  "editProduct": {
+    "TITLE": "تعديل المنتج",
+    "BREADCRUMB": {
+      "PRODUCTS": "المنتجات",
+      "EDIT": "تعديل"
+    },
+    "STATUS": {
+      "DRAFT": "مسودة"
+    },
+    "SECTION": {
+      "INFO": "معلومات المنتج",
+      "PRICING": "التسعير",
+      "IMAGES": "صور المنتج",
+      "PUBLISH": "النشر"
+    },
+    "FIELD": {
+      "NAME": "اسم المنتج",
+      "DESCRIPTION": "الوصف",
+      "CATEGORY": "الفئة",
+      "BRAND": "العلامة التجارية",
+      "PRICE": "السعر",
+      "DISCOUNT": "الخصم (%)",
+      "FINAL_PRICE": "السعر النهائي",
+      "ACTIVE": "نشط"
+    },
+    "ACTION": {
+      "UPDATE": "تحديث المنتج",
+      "CANCEL": "إلغاء"
+    },
+    "EMPTY": {
+      "IMAGES": "لا توجد صور مرفوعة"
+    }
+  },
+  "ADD_USER": {
+    "TITLE": "إضافة مستخدم",
+    "BREADCRUMB": {
+      "USERS": "المستخدمين",
+      "ADD": "إضافة"
+    },
+    "FORM": {
+      "NAME": "الاسم الكامل",
+      "EMAIL": "البريد الإلكتروني",
+      "PHONE": "رقم الهاتف",
+      "ROLE": "الدور",
+      "PASSWORD": "كلمة المرور",
+      "ACTIVE": "نشط"
+    },
+    "ROLES": {
+      "USER": "مستخدم",
+      "ADMIN": "مشرف",
+      "MANAGER": "مدير"
+    },
+    "ACTION": {
+      "SAVE": "حفظ المستخدم",
+      "CANCEL": "إلغاء"
+    }
+  },
+  "USER_DETAILS": {
+    "TITLE": "تفاصيل المستخدم",
+    "BREADCRUMB": {
+      "USERS": "المستخدمين",
+      "DETAILS": "التفاصيل"
+    },
+    "ACTION": {
+      "EDIT": "تعديل المستخدم",
+      "BACK": "رجوع"
+    },
+    "STATUS": {
+      "ACTIVE": "نشط",
+      "INACTIVE": "غير نشط"
+    },
+    "SECTION": {
+      "INFO": "معلومات المستخدم"
+    },
+    "FIELD": {
+      "EMAIL": "البريد الإلكتروني",
+      "PHONE": "رقم الهاتف",
+      "ROLE": "الدور",
+      "CREATED_AT": "تاريخ الإنشاء",
+      "LAST_LOGIN": "آخر تسجيل دخول"
+    }
+  },
+  "EDIT_USER": {
+    "TITLE": "تعديل المستخدم",
+    "BREADCRUMB": {
+      "USERS": "المستخدمين",
+      "EDIT": "تعديل"
+    },
+    "FIELD": {
+      "NAME": "الاسم الكامل",
+      "EMAIL": "البريد الإلكتروني",
+      "PHONE": "رقم الهاتف",
+      "ROLE": "الدور",
+      "ACTIVE": "نشط"
+    },
+    "ACTION": {
+      "UPDATE": "تحديث المستخدم",
+      "CANCEL": "إلغاء"
+    }
+  },
+  "ADD_CATEGORY": {
+    "TITLE": "إضافة تصنيف",
+    "BREADCRUMB": {
+      "CATEGORIES": "التصنيفات",
+      "ADD": "إضافة"
+    },
+    "FIELD": {
+      "NAME": "اسم التصنيف",
+      "DESCRIPTION": "الوصف",
+      "ACTIVE": "نشط"
+    },
+    "ACTION": {
+      "SAVE": "حفظ التصنيف",
+      "CANCEL": "إلغاء"
+    }
+  },
+  "EDIT_CATEGORY": {
+    "TITLE": "تعديل التصنيف",
+    "BREADCRUMB": {
+      "CATEGORIES": "التصنيفات",
+      "EDIT": "تعديل"
+    },
+    "FIELD": {
+      "NAME": "اسم التصنيف",
+      "DESCRIPTION": "الوصف",
+      "ACTIVE": "نشط"
+    },
+    "ACTION": {
+      "UPDATE": "تحديث التصنيف",
+      "CANCEL": "إلغاء"
+    }
+  },
+  "PENDING_ORDERS": {
+    "TITLE": "الطلبات المعلقة",
+    "BREADCRUMB": {
+      "ORDERS": "الطلبات",
+      "PENDING": "قيد الانتظار"
+    },
+    "TABLE": {
+      "ORDER_ID": "رقم الطلب",
+      "CUSTOMER": "العميل",
+      "DATE": "التاريخ",
+      "TOTAL": "الإجمالي",
+      "STATUS": "الحالة",
+      "ACTIONS": "الإجراءات"
+    },
+    "ACTION": {
+      "VIEW": "عرض"
+    },
+    "CURRENCY": "ج.م"
+  },
+  "ORDER_DETAILS": {
+    "TITLE": "تفاصيل الطلب",
+    "BREADCRUMB": {
+      "ORDERS": "الطلبات",
+      "DETAILS": "التفاصيل"
+    },
+    "SECTIONS": {
+      "CUSTOMER": "العميل",
+      "ITEMS": "عناصر الطلب"
+    },
+    "INFO": {
+      "ORDER_ID": "رقم الطلب",
+      "DATE": "التاريخ",
+      "PAYMENT": "طريقة الدفع"
+    },
+    "TABLE": {
+      "PRODUCT": "المنتج",
+      "PRICE": "السعر",
+      "QTY": "الكمية",
+      "TOTAL": "الإجمالي"
+    },
+    "SUBTOTAL": "المجموع الفرعي",
+    "ACTION": {
+      "BACK": "العودة إلى الطلبات"
+    }
+  },
+  "ORDER_STATUS": {
+    "pending": "قيد الانتظار",
+    "completed": "مكتمل",
+    "cancelled": "ملغي",
+    "processing": "قيد المعالجة",
+    "shipped": "تم الشحن"
+  },
+  "CURRENCY": {
+    "EGP": "ج.م"
+  },
+  "ORDER_EDIT": {
+    "TITLE": "تعديل الطلب",
+    "HEADER": "تعديل الطلب",
+    "BREADCRUMB": {
+      "ORDERS": "الطلبات",
+      "EDIT": "تعديل"
+    },
+    "FIELDS": {
+      "STATUS": "الحالة",
+      "PAYMENT": "طريقة الدفع"
+    },
+    "SECTIONS": {
+      "ITEMS": "العناصر"
+    },
+    "TABLE": {
+      "PRODUCT": "المنتج",
+      "PRICE": "السعر",
+      "QTY": "الكمية",
+      "TOTAL": "الإجمالي"
+    },
+    "SUBTOTAL": "المجموع الفرعي",
+    "ACTION": {
+      "SAVE": "حفظ التغييرات"
+    }
+  },
+   "COUPON_ADD": {
+    "TITLE": "إضافة كوبون",
+    "BREADCRUMB": {
+      "COUPONS": "الكوبونات",
+      "ADD": "إضافة"
+    },
+    "FIELDS": {
+      "CODE": "كود الكوبون",
+      "DISCOUNT": "قيمة الخصم",
+      "TYPE": "نوع الخصم",
+      "EXPIRY": "تاريخ الانتهاء",
+      "ACTIVE": "نشط"
+    },
+    "TYPE": {
+      "PERCENTAGE": "نسبة مئوية (%)",
+      "FIXED": "قيمة ثابتة"
+    },
+    "ACTION": {
+      "SAVE": "حفظ الكوبون"
+    }
+  },
+  "COUPON_EDIT": {
+    "TITLE": "تعديل الكوبون",
+    "BREADCRUMB": {
+      "COUPONS": "الكوبونات",
+      "EDIT": "تعديل"
+    },
+    "FIELDS": {
+      "CODE": "كود الكوبون",
+      "DISCOUNT": "قيمة الخصم",
+      "TYPE": "نوع الخصم",
+      "EXPIRY": "تاريخ الانتهاء",
+      "ACTIVE": "نشط"
+    },
+    "TYPE": {
+      "PERCENTAGE": "نسبة مئوية (%)",
+      "FIXED": "قيمة ثابتة"
+    },
+    "ACTION": {
+      "UPDATE": "تحديث الكوبون"
+    }
+  },
+  "INVENTORY_ADD": {
+    "TITLE": "إضافة مخزون",
+    "BREADCRUMB": {
+      "INVENTORY": "المخزون",
+      "ADD": "إضافة"
+    },
+    "FIELDS": {
+      "PRODUCT_NAME": "اسم المنتج",
+      "SKU": "رمز المنتج (SKU)",
+      "QUANTITY": "الكمية",
+      "LOW_STOCK": "تنبيه انخفاض المخزون",
+      "LOCATION": "موقع المستودع",
+      "ACTIVE": "متوفر"
+    },
+    "LOCATION": {
+      "MAIN": "المستودع الرئيسي",
+      "STORE": "واجهة المتجر",
+      "SECONDARY": "مستودع ثانوي"
+    },
+    "ACTION": {
+      "SAVE": "حفظ المخزون"
+    }
+  },
+  "INVENTORY_EDIT": {
+    "TITLE": "تعديل المخزون",
+    "BREADCRUMB": {
+      "INVENTORY": "المخزون",
+      "EDIT": "تعديل"
+    },
+    "FIELDS": {
+      "PRODUCT_NAME": "اسم المنتج",
+      "SKU": "رمز المنتج (SKU)",
+      "QUANTITY": "الكمية",
+      "LOW_STOCK": "تنبيه انخفاض المخزون",
+      "LOCATION": "موقع المستودع",
+      "ACTIVE": "متوفر"
+    },
+    "LOCATION": {
+      "MAIN": "المستودع الرئيسي",
+      "STORE": "واجهة المتجر",
+      "SECONDARY": "مستودع ثانوي"
+    },
+    "ACTION": {
+      "UPDATE": "تحديث المخزون"
+    }
+  },
+  "REFUNDS": {
+    "TITLE": "طلبات الاسترجاع",
+    "BREADCRUMB": {
+      "PAYMENTS": "المدفوعات",
+      "REFUNDS": "الاسترجاع"
+    },
+    "TABLE": {
+      "REFUND_ID": "رقم الاسترجاع",
+      "ORDER_ID": "رقم الطلب",
+      "CUSTOMER": "العميل",
+      "AMOUNT": "المبلغ",
+      "REASON": "السبب",
+      "STATUS": "الحالة",
+      "DATE": "التاريخ",
+      "ACTIONS": "الإجراءات"
+    },
+    "STATUS": {
+      "PENDING": "قيد المراجعة",
+      "APPROVED": "مقبول",
+      "REJECTED": "مرفوض"
+    }
+  },
+  "REFUND_DETAILS": {
+    "TITLE": "تفاصيل الاسترجاع",
+    "BREADCRUMB": {
+      "PAYMENTS": "المدفوعات",
+      "REFUNDS": "الاسترجاع",
+      "DETAILS": "التفاصيل"
+    },
+    "FIELDS": {
+      "REFUND_ID": "رقم الاسترجاع",
+      "ORDER_ID": "رقم الطلب",
+      "CUSTOMER": "العميل",
+      "EMAIL": "البريد الإلكتروني",
+      "PAYMENT": "طريقة الدفع",
+      "AMOUNT": "المبلغ",
+      "REQUESTED_AT": "تاريخ الطلب",
+      "REASON": "السبب"
+    },
+    "ACTIONS": {
+      "TITLE": "الإجراءات",
+      "APPROVE": "الموافقة على الاسترجاع",
+      "REJECT": "رفض الاسترجاع"
+    }
+  },
+  "PAYMENT_DETAILS": {
+    "TITLE": "تفاصيل الدفع",
+    "SELECT": "اختر",
+    "BREADCRUMB": {
+      "PAYMENTS": "المدفوعات",
+      "DETAILS": "التفاصيل"
+    },
+    "FIELDS": {
+      "METHOD": "طريقة الدفع",
+      "CARD_NAME": "الاسم على البطاقة",
+      "CARD_NUMBER": "رقم البطاقة",
+      "EXPIRY": "تاريخ الانتهاء",
+      "CVV": "رمز التحقق CVV",
+      "BILLING_ADDRESS": "عنوان الفاتورة"
+    },
+    "METHODS": {
+      "CARD": "بطاقة ائتمان / خصم",
+      "PAYPAL": "باي بال",
+      "CASH": "نقداً"
+    }
+  },
+  "REPORTED_REVIEWS": {
+    "TITLE": "المراجعات المُبلّغ عنها",
+    "BREADCRUMB": {
+      "REVIEWS": "المراجعات",
+      "REPORTED": "المراجعات المُبلّغ عنها"
+    },
+    "TABLE": {
+      "REPORT_ID": "رقم البلاغ",
+      "PRODUCT": "المنتج",
+      "REVIEWER": "المراجع",
+      "RATING": "التقييم",
+      "REASON": "سبب البلاغ",
+      "STATUS": "الحالة",
+      "DATE": "التاريخ",
+      "ACTIONS": "الإجراءات"
+    },
+    "ACTIONS": {
+      "REVIEW": "مراجعة"
+    }
+  },
+  "Pending": "قيد المراجعة",
+  "Resolved": "تم الحل",
+  "SHIPPING_ZONES": {
+    "TITLE": "مناطق الشحن",
+    "BREADCRUMB": {
+      "SHIPPING": "الشحن",
+      "ZONES": "مناطق الشحن"
+    },
+    "TABLE": {
+      "NAME": "اسم المنطقة",
+      "FEE": "رسوم الشحن",
+      "DELIVERY": "مدة التوصيل",
+      "STATUS": "الحالة",
+      "ACTIONS": "الإجراءات"
+    },
+    "ACTIONS": {
+      "ADD": "إضافة منطقة"
+    }
+  },
+   "SHIPPING_EDIT": {
+    "TITLE": "تعديل بيانات الشحن",
+    "BREADCRUMB": {
+      "SHIPPING": "الشحن",
+      "EDIT": "تعديل"
+    },
+    "ACTIONS": {
+      "ADD_ZONE": "إضافة منطقة"
+    },
+    "FIELDS": {
+      "FULL_NAME": "الاسم الكامل",
+      "PHONE": "رقم الهاتف",
+      "ADDRESS1": "العنوان (السطر الأول)",
+      "ADDRESS2": "العنوان (السطر الثاني)",
+      "CITY": "المدينة",
+      "STATE": "المنطقة / المحافظة",
+      "POSTAL": "الرمز البريدي",
+      "COUNTRY": "الدولة",
+      "NOTES": "ملاحظات التوصيل"
+    }
+  },
+  "SHIPPING_ZONE_ADD": {
+    "TITLE": "إضافة منطقة شحن",
+    "BREADCRUMB": {
+      "SHIPPING": "الشحن",
+      "ZONES": "مناطق الشحن",
+      "ADD": "إضافة"
+    },
+    "FIELDS": {
+      "NAME": "اسم المنطقة",
+      "FEE": "رسوم الشحن (جنيه)",
+      "DELIVERY": "مدة التوصيل",
+      "ACTIVE": "مفعل"
+    }
+  },
+  "EMAIL_SETTINGS": {
+    "TITLE": "إعدادات البريد الإلكتروني",
+    "BREADCRUMB": {
+      "GENERAL": "الإعدادات العامة",
+      "EMAIL": "إعدادات البريد"
+    },
+    "FIELDS": {
+      "DRIVER": "نوع المرسل",
+      "HOST": "خادم البريد",
+      "PORT": "المنفذ",
+      "USERNAME": "اسم المستخدم",
+      "PASSWORD": "كلمة المرور",
+      "ENCRYPTION": "التشفير",
+      "FROM_ADDRESS": "البريد المرسل منه",
+      "FROM_NAME": "اسم المرسل"
+    }
+  },
+  "PAYMENT_SETTINGS": {
+    "TITLE": "إعدادات الدفع",
+    "BREADCRUMB": {
+      "GENERAL": "الإعدادات العامة",
+      "PAYMENT": "إعدادات الدفع"
+    },
+    "FIELDS": {
+      "DEFAULT_GATEWAY": "بوابة الدفع الافتراضية",
+      "STRIPE_KEY": "مفتاح Stripe",
+      "PAYPAL_CLIENT": "معرّف PayPal",
+      "PAYPAL_SECRET": "الرمز السري لـ PayPal",
+      "PAYMOB_KEY": "مفتاح Paymob"
+    }
+  },
+  "STORE_SETTINGS": {
+    "TITLE": "إعدادات المتجر",
+    "BREADCRUMB": {
+      "GENERAL": "الإعدادات العامة",
+      "STORE": "إعدادات المتجر"
+    },
+    "FIELDS": {
+      "NAME": "اسم المتجر",
+      "EMAIL": "بريد المتجر الإلكتروني",
+      "PHONE": "هاتف المتجر",
+      "ADDRESS": "عنوان المتجر",
+      "CURRENCY": "العملة"
+    }
   }
 }

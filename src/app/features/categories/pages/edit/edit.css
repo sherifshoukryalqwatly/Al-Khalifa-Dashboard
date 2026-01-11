@@ -6,3 +6,19 @@ ol a {
   text-decoration: none;
   color : #000
 }
+/* Normal LTR */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+}
+
+/* Arabic RTL override */
+nav.rtl .breadcrumb {
+  direction: rtl;
+}
+
+/* Remove bootstrap RTL flip */
+nav.rtl .breadcrumb-item + .breadcrumb-item::before {
+  content: " / ";
+  float: none;
+  padding: 0 0.5rem;
+}

@@ -1,16 +1,23 @@
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
   <div>
-    <h4 class="fw-bold mb-1">Shipping Zones</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">
+      {{ 'SHIPPING_ZONES.TITLE' | translate }}
+    </h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/shipping">Shippings</a></li>
-        <li class="breadcrumb-item active">Shipping Zones</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/shipping">{{ 'SHIPPING_ZONES.BREADCRUMB.SHIPPING' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'SHIPPING_ZONES.BREADCRUMB.ZONES' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
 
   <a routerLink="/shipping/zones/add" class="btn btn-primary">
-    <i class="bi bi-plus-circle me-1"></i> Add Zone
+    <i class="bi bi-plus-circle me-1"></i>
+    {{ 'SHIPPING_ZONES.ACTIONS.ADD' | translate }}
   </a>
 </div>
 
@@ -21,11 +28,11 @@
       <table class="table align-middle">
         <thead>
           <tr>
-            <th>Zone Name</th>
-            <th>Shipping Fee</th>
-            <th>Delivery Time</th>
-            <th>Status</th>
-            <th class="text-end">Actions</th>
+            <th>{{ 'SHIPPING_ZONES.TABLE.NAME' | translate }}</th>
+            <th>{{ 'SHIPPING_ZONES.TABLE.FEE' | translate }}</th>
+            <th>{{ 'SHIPPING_ZONES.TABLE.DELIVERY' | translate }}</th>
+            <th>{{ 'SHIPPING_ZONES.TABLE.STATUS' | translate }}</th>
+            <th class="text-end">{{ 'SHIPPING_ZONES.TABLE.ACTIONS' | translate }}</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +45,7 @@
                 class="badge"
                 [ngClass]="zone.active ? 'bg-success' : 'bg-secondary'"
               >
-                {{ zone.active ? 'Active' : 'Inactive' }}
+                {{ zone.active ? ('COMMON.ACTIVE' | translate) : ('COMMON.INACTIVE' | translate) }}
               </span>
             </td>
             <td class="text-end">
@@ -46,7 +53,7 @@
                 routerLink="/shipping/edit/123"
                 class="btn btn-sm btn-outline-primary"
               >
-                Edit
+                {{ 'COMMON.EDIT' | translate }}
               </a>
             </td>
           </tr>

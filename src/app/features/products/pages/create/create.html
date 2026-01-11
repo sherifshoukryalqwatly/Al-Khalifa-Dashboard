@@ -1,49 +1,52 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Add Product</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">{{ 'addProduct.title' | translate }}</h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
-          <a routerLink="/products">Products</a>
+          <a routerLink="/products">{{ 'addProduct.breadcrumb.products' | translate }}</a>
         </li>
-        <li class="breadcrumb-item active">Add</li>
+        <li class="breadcrumb-item active">
+          {{ 'addProduct.breadcrumb.add' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
 </div>
+
 <form class="row g-4">
 
   <!-- LEFT -->
   <div class="col-lg-8">
     <div class="card shadow-sm border-0 mb-4">
       <div class="card-header bg-white fw-semibold">
-        Product Information
+        {{ 'addProduct.info.title' | translate }}
       </div>
 
       <div class="card-body">
         <div class="mb-3">
-          <label class="form-label fw-semibold">Product Name</label>
-          <input type="text" class="form-control" placeholder="iPhone 15 Pro">
+          <label class="form-label fw-semibold">{{ 'addProduct.info.name' | translate }}</label>
+          <input type="text" class="form-control" [placeholder]="'addProduct.placeholders.name' | translate">
         </div>
 
         <div class="mb-3">
-          <label class="form-label fw-semibold">Description</label>
-          <textarea rows="4" class="form-control" placeholder="Product description..."></textarea>
+          <label class="form-label fw-semibold">{{ 'addProduct.info.description' | translate }}</label>
+          <textarea rows="4" class="form-control" [placeholder]="'addProduct.placeholders.description' | translate"></textarea>
         </div>
 
         <div class="row g-3">
           <div class="col-md-6">
-            <label class="form-label fw-semibold">Category</label>
+            <label class="form-label fw-semibold">{{ 'addProduct.info.category' | translate }}</label>
             <select class="form-select">
-              <option>Select category</option>
-              <option>Electronics</option>
-              <option>Clothing</option>
+              <option>{{ 'addProduct.select.category' | translate }}</option>
+              <option>{{ 'addProduct.category.electronics' | translate }}</option>
+              <option>{{ 'addProduct.category.clothing' | translate }}</option>
             </select>
           </div>
 
           <div class="col-md-6">
-            <label class="form-label fw-semibold">Brand</label>
-            <input type="text" class="form-control" placeholder="Apple">
+            <label class="form-label fw-semibold">{{ 'addProduct.info.brand' | translate }}</label>
+            <input type="text" class="form-control" [placeholder]="'addProduct.placeholders.brand' | translate">
           </div>
         </div>
       </div>
@@ -52,24 +55,24 @@
     <!-- Pricing -->
     <div class="card shadow-sm border-0">
       <div class="card-header bg-white fw-semibold">
-        Pricing
+        {{ 'addProduct.pricing.title' | translate }}
       </div>
 
       <div class="card-body">
         <div class="row g-3">
           <div class="col-md-4">
-            <label class="form-label fw-semibold">Price</label>
-            <input type="number" class="form-control" placeholder="1000">
+            <label class="form-label fw-semibold">{{ 'addProduct.pricing.price' | translate }}</label>
+            <input type="number" class="form-control" [placeholder]="'addProduct.placeholders.price' | translate">
           </div>
 
           <div class="col-md-4">
-            <label class="form-label fw-semibold">Discount</label>
-            <input type="number" class="form-control" placeholder="10%">
+            <label class="form-label fw-semibold">{{ 'addProduct.pricing.discount' | translate }}</label>
+            <input type="number" class="form-control" [placeholder]="'addProduct.placeholders.discount' | translate">
           </div>
 
           <div class="col-md-4">
-            <label class="form-label fw-semibold">Final Price</label>
-            <input type="number" class="form-control" disabled placeholder="900">
+            <label class="form-label fw-semibold">{{ 'addProduct.pricing.final' | translate }}</label>
+            <input type="number" class="form-control" disabled [placeholder]="'addProduct.placeholders.final' | translate">
           </div>
         </div>
       </div>
@@ -80,13 +83,13 @@
   <div class="col-lg-4">
     <div class="card shadow-sm border-0 mb-4">
       <div class="card-header bg-white fw-semibold">
-        Product Image
+        {{ 'addProduct.image.title' | translate }}
       </div>
 
       <div class="card-body text-center">
         <div class="border rounded p-4 mb-3">
           <i class="bi bi-image fs-1 text-muted"></i>
-          <p class="text-muted mb-0">Upload product image</p>
+          <p class="text-muted mb-0">{{ 'addProduct.image.uploadText' | translate }}</p>
         </div>
         <input type="file" class="form-control">
       </div>
@@ -94,21 +97,21 @@
 
     <div class="card shadow-sm border-0">
       <div class="card-header bg-white fw-semibold">
-        Publish
+        {{ 'addProduct.publish.title' | translate }}
       </div>
 
       <div class="card-body">
         <div class="form-check mb-3">
           <input class="form-check-input" type="checkbox" checked>
-          <label class="form-check-label">Active</label>
+          <label class="form-check-label">{{ 'addProduct.publish.active' | translate }}</label>
         </div>
 
         <button class="btn btn-primary w-100 mb-2">
-          <i class="bi bi-check-circle me-1"></i> Save Product
+          <i class="bi bi-check-circle me-1"></i> {{ 'addProduct.actions.save' | translate }}
         </button>
 
         <a routerLink="/products" class="btn btn-outline-secondary w-100">
-          Cancel
+          {{ 'addProduct.actions.cancel' | translate }}
         </a>
       </div>
     </div>

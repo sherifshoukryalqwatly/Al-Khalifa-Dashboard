@@ -1,10 +1,16 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Refund Requests</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">
+      {{ 'REFUNDS.TITLE' | translate }}
+    </h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/payments">payments</a></li>
-        <li class="breadcrumb-item active">Refunds</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/payments">{{ 'REFUNDS.BREADCRUMB.PAYMENTS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'REFUNDS.BREADCRUMB.REFUNDS' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
@@ -17,14 +23,16 @@
       <table class="table align-middle">
         <thead>
           <tr>
-            <th>Refund ID</th>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Amount</th>
-            <th>Reason</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th class="text-end">Actions</th>
+            <th>{{ 'REFUNDS.TABLE.REFUND_ID' | translate }}</th>
+            <th>{{ 'REFUNDS.TABLE.ORDER_ID' | translate }}</th>
+            <th>{{ 'REFUNDS.TABLE.CUSTOMER' | translate }}</th>
+            <th>{{ 'REFUNDS.TABLE.AMOUNT' | translate }}</th>
+            <th>{{ 'REFUNDS.TABLE.REASON' | translate }}</th>
+            <th>{{ 'REFUNDS.TABLE.STATUS' | translate }}</th>
+            <th>{{ 'REFUNDS.TABLE.DATE' | translate }}</th>
+            <th class="text-end">
+              {{ 'REFUNDS.TABLE.ACTIONS' | translate }}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +40,7 @@
             <td>{{ refund.id }}</td>
             <td>{{ refund.orderId }}</td>
             <td>{{ refund.customer }}</td>
-            <td>{{ refund.amount }} EGP</td>
+            <td>{{ refund.amount }} {{ 'COMMON.CURRENCY' | translate }}</td>
             <td>{{ refund.reason }}</td>
             <td>
               <span
@@ -43,16 +51,16 @@
                   'bg-danger': refund.status === 'Rejected'
                 }"
               >
-                {{ refund.status }}
+                {{ ('REFUNDS.STATUS.' + refund.status.toUpperCase()) | translate }}
               </span>
             </td>
             <td>{{ refund.date }}</td>
             <td class="text-end">
               <a
-                routerLink="/payments/refunds/details/123"
+                [routerLink]="['/payments/refunds/details', refund.id]"
                 class="btn btn-sm btn-outline-primary"
               >
-                View
+                {{ 'COMMON.VIEW' | translate }}
               </a>
             </td>
           </tr>

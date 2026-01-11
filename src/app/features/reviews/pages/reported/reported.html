@@ -1,10 +1,16 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Reported Reviews</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">
+      {{ 'REPORTED_REVIEWS.TITLE' | translate }}
+    </h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/reviews">Reviews</a></li>
-        <li class="breadcrumb-item active">Reported Reviews</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/reviews">{{ 'REPORTED_REVIEWS.BREADCRUMB.REVIEWS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'REPORTED_REVIEWS.BREADCRUMB.REPORTED' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
@@ -17,14 +23,14 @@
       <table class="table align-middle">
         <thead>
           <tr>
-            <th>Report ID</th>
-            <th>Product</th>
-            <th>Reviewer</th>
-            <th>Rating</th>
-            <th>Reason</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th class="text-end">Actions</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.REPORT_ID' | translate }}</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.PRODUCT' | translate }}</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.REVIEWER' | translate }}</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.RATING' | translate }}</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.REASON' | translate }}</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.STATUS' | translate }}</th>
+            <th>{{ 'REPORTED_REVIEWS.TABLE.DATE' | translate }}</th>
+            <th class="text-end">{{ 'REPORTED_REVIEWS.TABLE.ACTIONS' | translate }}</th>
           </tr>
         </thead>
         <tbody>
@@ -47,7 +53,7 @@
                   'bg-success': report.status === 'Resolved'
                 }"
               >
-                {{ report.status }}
+                {{ report.status | translate }}
               </span>
             </td>
             <td>{{ report.date }}</td>
@@ -56,7 +62,7 @@
                 routerLink="/reviews/reported/details"
                 class="btn btn-sm btn-outline-primary"
               >
-                Review
+                {{ 'REPORTED_REVIEWS.ACTIONS.REVIEW' | translate }}
               </a>
             </td>
           </tr>

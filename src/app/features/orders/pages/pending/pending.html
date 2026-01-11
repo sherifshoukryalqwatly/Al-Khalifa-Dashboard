@@ -1,10 +1,14 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Pending Orders</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">{{ 'PENDING_ORDERS.TITLE' | translate }}</h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/orders">Orders</a></li>
-        <li class="breadcrumb-item active">Pending</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/orders">{{ 'PENDING_ORDERS.BREADCRUMB.ORDERS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'PENDING_ORDERS.BREADCRUMB.PENDING' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
@@ -17,12 +21,12 @@
       <table class="table align-middle">
         <thead>
           <tr>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Date</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th class="text-end">Actions</th>
+            <th>{{ 'PENDING_ORDERS.TABLE.ORDER_ID' | translate }}</th>
+            <th>{{ 'PENDING_ORDERS.TABLE.CUSTOMER' | translate }}</th>
+            <th>{{ 'PENDING_ORDERS.TABLE.DATE' | translate }}</th>
+            <th>{{ 'PENDING_ORDERS.TABLE.TOTAL' | translate }}</th>
+            <th>{{ 'PENDING_ORDERS.TABLE.STATUS' | translate }}</th>
+            <th class="text-end">{{ 'PENDING_ORDERS.TABLE.ACTIONS' | translate }}</th>
           </tr>
         </thead>
         <tbody>
@@ -30,10 +34,10 @@
             <td>{{ order.id }}</td>
             <td>{{ order.customer }}</td>
             <td>{{ order.date }}</td>
-            <td>{{ order.total }} EGP</td>
+            <td>{{ order.total }} {{ 'PENDING_ORDERS.CURRENCY' | translate }}</td>
             <td>
               <span class="badge bg-warning text-dark">
-                {{ order.status }}
+                {{ order.status | translate }}
               </span>
             </td>
             <td class="text-end">
@@ -41,7 +45,7 @@
                 routerLink="/orders/details/123"
                 class="btn btn-sm btn-outline-primary"
               >
-                View
+                {{ 'PENDING_ORDERS.ACTION.VIEW' | translate }}
               </a>
             </td>
           </tr>

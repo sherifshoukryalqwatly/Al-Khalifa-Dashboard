@@ -1,10 +1,16 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Add Inventory</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">
+      {{ 'INVENTORY_ADD.TITLE' | translate }}
+    </h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/inventory">Inventory</a></li>
-        <li class="breadcrumb-item active">Add</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/inventory">{{ 'INVENTORY_ADD.BREADCRUMB.INVENTORY' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'INVENTORY_ADD.BREADCRUMB.ADD' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
@@ -18,7 +24,9 @@
 
         <!-- Product Name -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Product Name</label>
+          <label class="form-label fw-semibold">
+            {{ 'INVENTORY_ADD.FIELDS.PRODUCT_NAME' | translate }}
+          </label>
           <input
             type="text"
             class="form-control"
@@ -30,7 +38,9 @@
 
         <!-- SKU -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">SKU</label>
+          <label class="form-label fw-semibold">
+            {{ 'INVENTORY_ADD.FIELDS.SKU' | translate }}
+          </label>
           <input
             type="text"
             class="form-control"
@@ -41,7 +51,9 @@
 
         <!-- Quantity -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Quantity</label>
+          <label class="form-label fw-semibold">
+            {{ 'INVENTORY_ADD.FIELDS.QUANTITY' | translate }}
+          </label>
           <input
             type="number"
             class="form-control"
@@ -53,7 +65,9 @@
 
         <!-- Low Stock Alert -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Low Stock Alert</label>
+          <label class="form-label fw-semibold">
+            {{ 'INVENTORY_ADD.FIELDS.LOW_STOCK' | translate }}
+          </label>
           <input
             type="number"
             class="form-control"
@@ -65,15 +79,23 @@
 
         <!-- Location -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Warehouse Location</label>
+          <label class="form-label fw-semibold">
+            {{ 'INVENTORY_ADD.FIELDS.LOCATION' | translate }}
+          </label>
           <select
             class="form-select"
             [(ngModel)]="inventory.location"
             name="location"
           >
-            <option>Main Warehouse</option>
-            <option>Store Front</option>
-            <option>Secondary Warehouse</option>
+            <option value="main">
+              {{ 'INVENTORY_ADD.LOCATION.MAIN' | translate }}
+            </option>
+            <option value="store">
+              {{ 'INVENTORY_ADD.LOCATION.STORE' | translate }}
+            </option>
+            <option value="secondary">
+              {{ 'INVENTORY_ADD.LOCATION.SECONDARY' | translate }}
+            </option>
           </select>
         </div>
 
@@ -85,7 +107,9 @@
             [(ngModel)]="inventory.active"
             name="active"
           />
-          <label class="form-check-label">In Stock</label>
+          <label class="form-check-label">
+            {{ 'INVENTORY_ADD.FIELDS.ACTIVE' | translate }}
+          </label>
         </div>
 
         <button
@@ -93,11 +117,12 @@
           class="btn btn-primary w-100 mb-2"
           [disabled]="!inventory.productName"
         >
-          <i class="bi bi-check-circle me-1"></i> Save Inventory
+          <i class="bi bi-check-circle me-1"></i>
+          {{ 'INVENTORY_ADD.ACTION.SAVE' | translate }}
         </button>
 
         <a routerLink="/inventory" class="btn btn-outline-secondary w-100">
-          Cancel
+          {{ 'COMMON.CANCEL' | translate }}
         </a>
 
       </div>

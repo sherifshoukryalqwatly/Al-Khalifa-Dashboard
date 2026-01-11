@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit',
-  imports: [CommonModule,FormsModule,RouterModule],
+  imports: [CommonModule,FormsModule,RouterModule,TranslateModule],
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })
@@ -25,14 +26,16 @@ export class Edit {
     active: true
   };
   categories = ['Electronics', 'Accessories', 'Clothing', 'Books'];
-
-  constructor(private route: ActivatedRoute){}
+  isRtl = false;
   productId!: string;
   images: string[] = [];
-
+  constructor(private route: ActivatedRoute,private translate: TranslateService){}
   ngOnInit() {
     this.productId = this.route.snapshot.paramMap.get('id')!;
-
+    this.isRtl = this.translate.currentLang === 'ar';
+    this.translate.onLangChange.subscribe(e => {
+      this.isRtl = e.lang === 'ar';
+    });
     // API CALL
     // this.productService.getById(this.productId).subscribe(product => {
     //   this.form.patchValue(product);

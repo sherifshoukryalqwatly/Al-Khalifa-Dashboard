@@ -1,10 +1,16 @@
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
   <div>
-    <h4 class="fw-bold mb-1">Order Edit</h4>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/orders">Orders</a></li>
-        <li class="breadcrumb-item active">Edit</li>
+    <h4 class="fw-bold mb-1">
+      {{ 'ORDER_EDIT.TITLE' | translate }}
+    </h4>
+     <nav aria-label="breadcrumb" [class.rtl]="isRtl">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a routerLink="/orders">{{ 'ORDER_EDIT.BREADCRUMB.ORDERS' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'ORDER_EDIT.BREADCRUMB.EDIT' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
@@ -15,46 +21,56 @@
 
     <div class="col-lg-6">
       <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h4 class="fw-bold pe-2">Edit Order</h4>
-        <button class="btn btn-primary" type="submit">Save Changes</button>
+        <h4 class="fw-bold pe-2">
+          {{ 'ORDER_EDIT.HEADER' | translate }}
+        </h4>
+        <button class="btn btn-primary" type="submit">
+          {{ 'ORDER_EDIT.ACTION.SAVE' | translate }}
+        </button>
       </div>
 
       <div class="row">
         <div class="col-md-6">
-          <label>Status</label>
+          <label>
+            {{ 'ORDER_EDIT.FIELDS.STATUS' | translate }}
+          </label>
           <select formControlName="status" class="form-select">
-            <option value="pending">Pending</option>
-            <option value="processing">Processing</option>
-            <option value="shipped">Shipped</option>
-            <option value="completed">Completed</option>
-            <option value="cancelled">Cancelled</option>
+            <option value="pending">{{ 'ORDER_STATUS.pending' | translate }}</option>
+            <option value="processing">{{ 'ORDER_STATUS.processing' | translate }}</option>
+            <option value="shipped">{{ 'ORDER_STATUS.shipped' | translate }}</option>
+            <option value="completed">{{ 'ORDER_STATUS.completed' | translate }}</option>
+            <option value="cancelled">{{ 'ORDER_STATUS.cancelled' | translate }}</option>
           </select>
         </div>
 
         <div class="col-md-6">
-          <label>Payment Method</label>
+          <label>
+            {{ 'ORDER_EDIT.FIELDS.PAYMENT' | translate }}
+          </label>
           <input class="form-control" formControlName="paymentMethod">
         </div>
       </div>
 
       <hr>
 
-      <h6 class="fw-bold">Items</h6>
+      <h6 class="fw-bold">
+        {{ 'ORDER_EDIT.SECTIONS.ITEMS' | translate }}
+      </h6>
 
       <table class="table">
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th class="text-center">Qty</th>
-            <th class="text-end">Total</th>
+            <th>{{ 'ORDER_EDIT.TABLE.PRODUCT' | translate }}</th>
+            <th>{{ 'ORDER_EDIT.TABLE.PRICE' | translate }}</th>
+            <th class="text-center">{{ 'ORDER_EDIT.TABLE.QTY' | translate }}</th>
+            <th class="text-end">{{ 'ORDER_EDIT.TABLE.TOTAL' | translate }}</th>
           </tr>
         </thead>
         <tbody formArrayName="items">
           @for (item of items.controls; track $index; let i = $index) {
             <tr [formGroupName]="i">
               <td>{{ item.value.name }}</td>
-              <td>{{ item.value.price }} EGP</td>
+              <td>{{ item.value.price }} {{ 'CURRENCY.EGP' | translate }}</td>
               <td class="text-center">
                 <input type="number"
                        min="1"
@@ -62,7 +78,7 @@
                        formControlName="quantity">
               </td>
               <td class="text-end">
-                {{ item.value.price * item.value.quantity }} EGP
+                {{ item.value.price * item.value.quantity }} {{ 'CURRENCY.EGP' | translate }}
               </td>
             </tr>
           }
@@ -70,7 +86,7 @@
       </table>
 
       <div class="text-end fw-bold">
-        Subtotal: {{ subtotal }} EGP
+        {{ 'ORDER_EDIT.SUBTOTAL' | translate }}: {{ subtotal }} {{ 'CURRENCY.EGP' | translate }}
       </div>
 
     </div>

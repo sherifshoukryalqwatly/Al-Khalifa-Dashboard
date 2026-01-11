@@ -1,61 +1,47 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div>
-    <h4 class="fw-bold mb-1">Add Category</h4>
-    <nav aria-label="breadcrumb">
+    <h4 class="fw-bold mb-1">{{ 'ADD_CATEGORY.TITLE' | translate }}</h4>
+    <nav aria-label="breadcrumb" [class.rtl]="isRtl">
       <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a routerLink="/categories">Categories</a></li>
-        <li class="breadcrumb-item active">Add</li>
+        <li class="breadcrumb-item">
+          <a routerLink="/categories">{{ 'ADD_CATEGORY.BREADCRUMB.CATEGORIES' | translate }}</a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{ 'ADD_CATEGORY.BREADCRUMB.ADD' | translate }}
+        </li>
       </ol>
     </nav>
   </div>
 </div>
+
 <form class="row justify-content-center" (ngSubmit)="createCategory()">
   <div class="col-lg-6">
 
     <div class="card shadow-sm border-0">
       <div class="card-body">
 
-        <!-- Name -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Category Name</label>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="category.name"
-            name="name"
-            required
-          />
+          <label class="form-label fw-semibold">{{ 'ADD_CATEGORY.FIELD.NAME' | translate }}</label>
+          <input type="text" class="form-control" [(ngModel)]="category.name" name="name" required />
         </div>
 
-        <!-- Description -->
         <div class="mb-3">
-          <label class="form-label fw-semibold">Description</label>
-          <textarea
-            class="form-control"
-            rows="3"
-            [(ngModel)]="category.description"
-            name="description"
-          ></textarea>
+          <label class="form-label fw-semibold">{{ 'ADD_CATEGORY.FIELD.DESCRIPTION' | translate }}</label>
+          <textarea class="form-control" rows="3" [(ngModel)]="category.description" name="description"></textarea>
         </div>
 
-        <!-- Status -->
         <div class="form-check mb-4">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            [(ngModel)]="category.active"
-            name="active"
-          />
-          <label class="form-check-label">Active</label>
+          <input class="form-check-input" type="checkbox" [(ngModel)]="category.active" name="active" />
+          <label class="form-check-label">{{ 'ADD_CATEGORY.FIELD.ACTIVE' | translate }}</label>
         </div>
 
-        <!-- Actions -->
         <button class="btn btn-primary w-100 mb-2" [disabled]="!category.name">
-          <i class="bi bi-check-circle me-1"></i> Save Category
+          <i class="bi bi-check-circle me-1"></i>
+          {{ 'ADD_CATEGORY.ACTION.SAVE' | translate }}
         </button>
 
         <a routerLink="/categories" class="btn btn-outline-secondary w-100">
-          Cancel
+          {{ 'ADD_CATEGORY.ACTION.CANCEL' | translate }}
         </a>
 
       </div>
